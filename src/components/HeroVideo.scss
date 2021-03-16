@@ -1,5 +1,5 @@
-@use 'partials/variables' as *;
-@use 'partials/mixins' as *;
+@import '../partials/_variables';
+@import '../partials/_mixins';
 
 video {
     width: 100%;

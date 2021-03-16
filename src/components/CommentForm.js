@@ -5,7 +5,7 @@ function CommentForm() {
     return (
 <section className="comments">
           <h2 className="comments__title">Join the Conversation</h2>
-          <form className="comments__form" enctype="application/json">
+          <form className="comments__form" >
             <div className="comments__image-container" >
               <div className="comment__image comment__profile-pic profile-pic" id="profile-pic">
               </div>
@@ -21,8 +21,6 @@ function CommentForm() {
             <button className="comments__button" type="submit">COMMENT</button>
           </div>
         </form>
-        <div className="comments__container">
-        </div>
       </section>
     )
 }

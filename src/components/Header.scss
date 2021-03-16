@@ -1,6 +1,32 @@
-@use 'partials/variables' as *;
-@use 'partials/mixins' as *;
+@import '../partials/_variables';
+@import '../partials/_mixins';
 
-header {
+.header {
     width: 100%;
+    @include flexCol;
+    
+    &__logo{
+        width: 10rem;
+        height: 2rem;
+        padding: 12px 0;
+    }
+
+    &__logo-container {
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__searchBar {
+        margin: 0 1rem;
+        height: 3rem;
+        border-radius: 4px;
+    }
+
+    &__btn {
+        background-color: $buttonBlue;
+    }
+
 }
+
