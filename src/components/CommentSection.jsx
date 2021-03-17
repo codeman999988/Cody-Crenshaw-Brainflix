@@ -8,8 +8,6 @@ function CommentSection() {
         <section className="Comments__Container">
             <CommentForm />
             <Comment />
-            <Comment />
-            <Comment />
         </section>
     )
 }

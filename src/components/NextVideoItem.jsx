@@ -6,7 +6,6 @@ console.log(VideoDetails);
 
     const NextVideoItem = (props) => {
         const data = VideoDetails;
-        console.log(data);
         const answers = data.map((deets) => {
             return   (
             <div className='nextVideoItem__container' key={deets.id}>

@@ -1,8 +1,13 @@
 @use 'partials/variables' as *;
 @use 'partials/mixins' as *;
 
+*{
+  box-sizing: border-box;
+}
+
 body {
   width: 100vw;
+  overflow-x: hidden;
 
 }
 
