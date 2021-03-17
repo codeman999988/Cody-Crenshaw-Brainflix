@@ -10,7 +10,7 @@ console.log(VideoDetails);
             return   (
             <div className='nextVideoItem__container' key={deets.id}>
             <img className="nextVideoItem__image"src={deets.image}/>
-            <div>
+            <div className="nextVideoItem__txt-container">
                 <h3>
                     {deets.title}
                 </h3>

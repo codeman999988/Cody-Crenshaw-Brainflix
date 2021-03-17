@@ -5,13 +5,18 @@
 
 
 &__image {
-    width: 90%;
-    height: auto;
+    width: 37.5vw;
+    height: 21.875vw;
 }
 
 &__container {
     width: 100%;
-    @include flexCol;
+    display: flex;
     align-items: center;
+}
+
+&__txt-container {
+    @include flexCol;
+
 }
 }
