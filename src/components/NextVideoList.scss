@@ -1,2 +1,7 @@
 @import '../partials/_variables';
 @import '../partials/_mixins';
+
+.nextVideoListContainer {
+    @include flexCol;
+    align-items: center;
+}

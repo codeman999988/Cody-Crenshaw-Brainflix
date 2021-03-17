@@ -1,2 +1,17 @@
 @import '../partials/_variables';
 @import '../partials/_mixins';
+
+.nextVideoItem{
+
+
+&__image {
+    width: 90%;
+    height: auto;
+}
+
+&__container {
+    width: 100%;
+    @include flexCol;
+    align-items: center;
+}
+}

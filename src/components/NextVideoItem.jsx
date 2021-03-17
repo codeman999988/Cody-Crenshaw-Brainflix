@@ -4,25 +4,26 @@ import VideoDetails from "../Data/video-details.json";
 
 console.log(VideoDetails);
 
-    const NextVideoItem = () => {
-    VideoDetails.map(({id, title, image}) => {
-        return (<div>
-        <img src={image}/>
-        <div>
-            <h3>
-                {title}
-            </h3>
-            <h4>
-                {id}
-            </h4>
-        </div>
-    </div>)
-    }
-        
-        
-            
-        
-    )
-}
+    const NextVideoItem = (props) => {
+        const data = VideoDetails;
+        console.log(data);
+        const answers = data.map((deets) => {
+            return   (
+            <div className='nextVideoItem__container' key={deets.id}>
+            <img className="nextVideoItem__image"src={deets.image}/>
+            <div>
+                <h3>
+                    {deets.title}
+                </h3>
+                <h4>
+                    By {deets.channel}
+                </h4>
+            </div>
+            </div>)});
+            return answers;}
+                 
+          
+
+
 
 export default NextVideoItem;

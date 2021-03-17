@@ -4,14 +4,7 @@ import './NextVideoList.scss';
 
 function NextVideoList() {
     return (
-        <section>
-            <NextVideoItem />
-            <NextVideoItem />
-            <NextVideoItem />
-            <NextVideoItem />
-            <NextVideoItem />
-            <NextVideoItem />
-            <NextVideoItem />
+        <section className="nextVideoList__container">
             <NextVideoItem />
         </section>
     )
