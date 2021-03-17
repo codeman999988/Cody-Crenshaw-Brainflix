@@ -314,6 +314,4 @@
         }
     ]
   }
-];
-
-export default vidArray;
+]

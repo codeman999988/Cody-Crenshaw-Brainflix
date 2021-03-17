@@ -1,9 +1,9 @@
 import './App.scss';
-import Header from "./components/Header";
-import HeroVideo from "./components/HeroVideo";
-import Article from "./components/Article";
-import CommentSection from './components/CommentSection'
-import NextVideoList from './components/NextVideoList'
+import Header from "./components/Header.jsx";
+import HeroVideo from "./components/HeroVideo.jsx";
+import Article from "./components/Article.jsx";
+import CommentSection from './components/CommentSection.jsx'
+import NextVideoList from './components/NextVideoList.jsx'
 
 function App() {
   return (
