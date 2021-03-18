@@ -1,17 +1,20 @@
-
-
-import React from 'react';
+import React, {Component} from 'react';
 import './Article.scss';
-import articles from "../Data/video-details.json";
+import articles from "../../Data/video-details.json";
 console.log(articles);
 
 
-function Article(){
+class Article extends Component{
+    
+    
+    render(){
         return (
             <div>
             <h2>Hi</h2>
             </div>
-        )}
+        )
+    }    
+    }
 
         export default Article;
 

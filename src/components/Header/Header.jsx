@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.scss';
-import {ReactComponent as BrainflixLogo} from '../assets/Logo-brainflix.svg';
-import something from "../assets/Mohan-muruge.jpg";
+import {ReactComponent as BrainflixLogo} from '../../assets/Logo-brainflix.svg';
+import something from "../../assets/Mohan-muruge.jpg";
 
 const Header = () => {
     return (

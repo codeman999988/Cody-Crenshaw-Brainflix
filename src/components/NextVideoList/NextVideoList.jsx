@@ -1,5 +1,5 @@
 import React from 'react'
-import NextVideoItem from './NextVideoItem';
+import NextVideoItem from '../NextVideoItem/NextVideoItem';
 import './NextVideoList.scss';
 
 function NextVideoList() {
