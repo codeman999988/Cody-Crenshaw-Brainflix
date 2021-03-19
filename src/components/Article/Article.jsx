@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './Article.scss';
 import ViewsIcon from '../../assets/Icon-views.svg';
-import LikesIcon from '../../assets/Icon-likes.svg'; 
+import LikesIcon from '../../assets/Icon-likes.svg';
+import Moment from 'moment';
 
 
 
@@ -17,7 +18,7 @@ class Article extends Component {
                 <h1 className="article__title">{this.props.title}</h1>
                 <div className="article__channel-date-container">
             <h3 className="article__channel">By {this.props.channel}</h3>
-                    <h4 className="article__date">{this.props.date}</h4>
+                    <h4 className="article__date">{Moment(this.props.date).fromNow()}</h4>
                 </div>
                 <div className="article__like-views-container">
                     <div className="article__views-container">

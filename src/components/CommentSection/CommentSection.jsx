@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './CommentSection.scss';
 import Comment from "../Comment/Comment";
 import CommentForm from "../CommentForm/CommentForm";
+import Moment from 'moment';
 
 class CommentSection extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class CommentSection extends Component {
                 return (
                     <Comment
                     name={comment.name}
-                    date={comment.date}
+                    date={Moment(comment.timestamp).fromNow()}
                     comment={comment.comment}
                     />
                 )

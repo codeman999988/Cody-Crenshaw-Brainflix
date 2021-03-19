@@ -23,20 +23,20 @@ console.log(VideoDetails);
                         <p className="comment__name">
                             {this.props.name}
                         </p>
-                        <time className="comment__date">{this.props.date}
-                        </time>
+                        <p className="comment__date">{this.props.date}
+                        </p>
                     </div> 
                     <p className="comment__content">
                         {this.props.comment}
                     </p>
-                    <div className="comment__btn-container">
+                    {/* <div className="comment__btn-container">
                         <button type="submit" className="comment__delete-btn" name="">Delete comment
                         </button>
                         <div className='comment__like-btn-cont'>
                             <button type="submit" className="comment__like-btn" name="">♡
                             </button> {} likes
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>)}};
  

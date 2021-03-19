@@ -134,6 +134,7 @@
     display: flex;
     padding-bottom: 1.5rem;
     border-bottom: 2px solid $merc;
+    margin: 0 1rem;
 
     &__btn-container {
         display: flex;
@@ -185,7 +186,7 @@
         height: 3rem;
         border-radius: 50%;
         margin-top: 1rem;
-        margin-right: 1rem;
+        margin-right: 6px;
         background-color: $silver;
 
         @include desktop {
@@ -195,6 +196,7 @@
 
     &__image-container {
         height: 100%;
+        // margin-right: 6px;
     }
 
     &__like-btn {
@@ -246,11 +248,11 @@
     &__profile-pic {
         background-image: url('../../assets/Mohan-muruge.jpg');
         background-size: cover;
-        margin-right: 1.25rem;
+        // margin-right: 1.25rem;
         }
 
     &__comment-profile-pic {
         background-size: cover;
-        margin-right: 1.25rem;
+        // margin-right: 1.25rem;
     }
 }
