@@ -4,28 +4,28 @@ import VideoDetails from "../../Data/video-details.json";
 
 console.log(VideoDetails);
 
-
+let videoState = "";
 
  class NextVideoItem extends Component {
-    
-    state= {
-        objectIndex: 0,
+    constructor(props) {
+        super(props);
     }
+  
 
-    handleClick = () => {
-        console.log("clickty clack");
+    handleClick = (e) => {
+        ;
     }
     
     render() {
         return (
-            <div onclick={this.handleClick} className='nextVideoItem__container' key={this.id}>
-                <img className="nextVideoItem__image"src={this.image}/>
+            <div onClick={this.handleClick} className='nextVideoItem__container' key={this.props.id}>
+                <img className="nextVideoItem__image"src={this.props.image}/>
                 <div className="nextVideoItem__txt-container">
                     <h3>
-                        {this.title}
+                        {this.props.title}
                     </h3>
                     <h4>
-                        By {this.channel}
+                        By {this.props.channel}
                     </h4>
                 </div>
             </div>

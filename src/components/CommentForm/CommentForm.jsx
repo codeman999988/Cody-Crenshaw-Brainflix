@@ -1,7 +1,7 @@
 import React from 'react'
 import './CommentForm.scss'
 
-function CommentForm() {
+const CommentForm = () => {
     return (
 <section className="comments">
           <h2 className="comments__title">Join the Conversation</h2>

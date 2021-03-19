@@ -7,19 +7,39 @@ console.log(VideoDetails);
 
     
     class Comment extends Component {
-        
-        state = {
-            commentObject: VideoDetails
+        constructor(props) {
+            super(props);
         }
 
         render() {
             return (
-                <div>
-                    
+<div className="comment">
+                <div className="comment__image-container">
+                    <div className="comment__image comment__comment-profile-pic">
+                    </div>
                 </div>
-            )
-        }
-    }
+                <div className="comment__container">
+                    <div className="comment__name-date-cont">
+                        <p className="comment__name">
+                            {this.props.name}
+                        </p>
+                        <time className="comment__date">{this.props.date}
+                        </time>
+                    </div> 
+                    <p className="comment__content">
+                        {this.props.comment}
+                    </p>
+                    <div className="comment__btn-container">
+                        <button type="submit" className="comment__delete-btn" name="">Delete comment
+                        </button>
+                        <div className='comment__like-btn-cont'>
+                            <button type="submit" className="comment__like-btn" name="">♡
+                            </button> {} likes
+                        </div>
+                    </div>
+                </div>
+            </div>)}};
+ 
     export default Comment;
     
 
@@ -39,32 +59,7 @@ console.log(VideoDetails);
 //         const data = VideoDetails[0].comments;
 //         const answers = data.map((deets) => {
 //             for(let i=0; i < data.length; i++){return   (
-//                 <div className="comment">
-//                 <div className="comment__image-container">
-//                     <div className="comment__image comment__comment-profile-pic">
-//                     </div>
-//                 </div>
-//                 <div className="comment__container">
-//                     <div className="comment__name-date-cont">
-//                         <p className="comment__name">
-//                             {deets.name}
-//                         </p>
-//                         <time className="comment__date">{deets.timestamp}
-//                         </time>
-//                     </div> 
-//                     <p className="comment__content">
-//                         {deets.comment}
-//                     </p>
-//                     <div className="comment__btn-container">
-//                         <button type="submit" className="comment__delete-btn" name="">Delete comment
-//                         </button>
-//                         <div className='comment__like-btn-cont'>
-//                             <button type="submit" className="comment__like-btn" name="">♡
-//                             </button> {deets.likes} likes
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>)}});
+                
 //             return answers;}
 
 
