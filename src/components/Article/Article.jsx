@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './Article.scss';
+import ViewsIcon from '../../assets/Icon-views.svg';
+import LikesIcon from '../../assets/Icon-likes.svg'; 
 
 
 
@@ -11,24 +13,24 @@ class Article extends Component {
     render() {
 
         return (
-            <div>
-                <h1>{this.props.title}</h1>
-                <div>
-            <       h3>By {this.props.channel}</h3>
-                    <h4>{this.props.date}</h4>
+            <div className="article__container">
+                <h1 className="article__title">{this.props.title}</h1>
+                <div className="article__channel-date-container">
+            <h3 className="article__channel">By {this.props.channel}</h3>
+                    <h4 className="article__date">{this.props.date}</h4>
                 </div>
-                <div>
-                    <div>
-                        <img />
-                        <h4>{this.props.views}</h4>
+                <div className="article__like-views-container">
+                    <div className="article__views-container">
+                        <img src={ViewsIcon} />
+                        <h4 className="article__counter">{this.props.views}</h4>
                     </div>
-                    <div>
-                        <img />
-                        <h4>{this.props.likes}</h4>
+                    <div className='article__likes-container'>
+                        <img src={LikesIcon}/>
+                        <h4 className="article__counter">{this.props.likes}</h4>
                     </div>
                 </div>
-                <h3>{this.props.desc}</h3>
-                <h2>{this.props.comments} Comments</h2>
+                <p className="article__content">{this.props.desc}</p>
+                <h2 className='comments__title'>{this.props.comments} Comments</h2>
             </div>
         )
     }    

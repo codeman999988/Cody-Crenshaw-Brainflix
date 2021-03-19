@@ -1,2 +1,78 @@
 @import '../../partials/_variables';
 @import '../../partials/_mixins';
+@use '../../partials/fonts' as *;
+
+* {
+@include resetSCSS;
+}
+
+.article__title{
+    @include H1-MOB;
+    // margin-left: 5%;
+    margin-bottom: 1rem;
+}
+
+.article__channel {
+    @include H2-MOB;
+    // margin-left: 5%;
+    margin-right: 2.5%;
+    display: inline-block;
+    font-weight: $demi-bold;
+}
+
+.article__channel-date-container {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+    // justify-content: flex-start;
+}
+
+.article__date {
+    display: inline-block;
+    @include H4-MOB;
+    color: $silver;
+    font-weight: $fontreg;
+    position: relative;
+    top: 2px;
+}
+
+.article__views-container{
+    display: flex;
+    margin-right: 2.5%;
+    // margin-left: 5%;
+    align-items: flex-start;
+}
+
+.article__like-views-container {
+    display: flex;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid $merc;
+}
+
+.article__likes-container{
+    display: flex;
+    align-items: flex-start;
+}
+
+.article__counter {
+@include H4-MOB;
+font-weight: $fontreg;
+display: inline-block;
+margin-left: .5rem;
+}
+
+.article__container{
+    margin: 0 1rem 1.5rem 1rem;
+}
+
+.article__content {
+    @include H4-MOB;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+
+}
+
+.comments__title{
+    @include H2-MOB;
+    font-weight: $demi-bold;
+}
