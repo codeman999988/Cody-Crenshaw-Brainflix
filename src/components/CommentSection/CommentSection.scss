@@ -1,2 +1,8 @@
 @import '../../partials/_variables';
 @import '../../partials/_mixins';
+
+.comments__container {
+    @include tablet {
+        margin: 0 1.5rem;
+    }
+}

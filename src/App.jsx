@@ -7,13 +7,13 @@ import CommentSection from './components/CommentSection/CommentSection.jsx'
 import NextVideoList from './components/NextVideoList/NextVideoList.jsx';
 import VideoDetails from "./Data/video-details.json";
 import cloneDeep from 'lodash';
-console.log(VideoDetails);
-
 
 let VideoState = cloneDeep(VideoDetails);
 
 let StateArray = VideoState.__wrapped__;
-console.log(StateArray);
+//const answer = StateArray.find((obj) => obj.id === "1am3jruuwagz");
+//console.log(answer);
+
 
 class App extends Component {
   
@@ -21,6 +21,14 @@ class App extends Component {
     CurrentVideo: StateArray[0],
     VideoArray: StateArray,
   }
+
+  handleSubmit = (event) => {
+
+  }
+// {if(this.state.CurrentVideo.id == "something"){
+
+// }
+// }
 
   render () {
     return (
@@ -42,10 +50,13 @@ class App extends Component {
       commentArray= {this.state.CurrentVideo.comments}
       />
       <NextVideoList 
-      vidArray= {this.state.VideoArray}
-      whenClicked= {
-        this.setState()
+      vidArray= {this.state.VideoArray.filter((obj) => obj !== this.state.CurrentVideo)}
+      whenClicked= { (event) => {
+        const answer = StateArray.find((obj) => obj.id === event.target.id);
+        console.log(answer);
+       this.setState({CurrentVideo: answer});
       }
+    }
       />
     </div>
   );

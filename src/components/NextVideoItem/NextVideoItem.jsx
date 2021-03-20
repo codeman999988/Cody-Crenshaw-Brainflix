@@ -18,17 +18,19 @@ let videoState = "";
     
     render() {
         return (
-            <div onClick={this.handleClick} className='nextVideoItem__container' key={this.props.id}>
-                <img className="nextVideoItem__image"src={this.props.image}/>
-                <div className="nextVideoItem__txt-container">
-                    <h3>
+            <>
+            <div className='videoItem__container' key={this.props.id}>
+                <img onClick={this.props.whenClicked}  className="videoItem__image" src={this.props.image} id={this.props.id}/>
+                <div className="videoItem__txt-container">
+                    <h3 className="videoItem__title">
                         {this.props.title}
                     </h3>
-                    <h4>
-                        By {this.props.channel}
+                    <h4 className="videoItem__author">
+                       {this.props.channel}
                     </h4>
                 </div>
             </div>
+            </>
         )
     }
 }

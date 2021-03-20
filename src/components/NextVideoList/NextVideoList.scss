@@ -1,7 +1,23 @@
 @import '../../partials/_variables';
 @import '../../partials/_mixins';
 
-.nextVideoList__container {
+.nextVideoList {
+
+&__container {
     @include flexCol;
-    align-items: center;
+    align-items:flex-start;
+}
+
+&__title {
+    @include H4-MOB;
+    font-weight: $demi-bold;
+    color: $silver;
+    margin: 2.5rem 0;
+    align-self: flex-start;
+    margin-left: 5%;
+
+    @include tablet {
+        margin-left: 1.5rem;
+    }
+}
 }

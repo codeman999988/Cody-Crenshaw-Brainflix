@@ -8,7 +8,7 @@ const CommentForm = () => {
           <h2 className="comments__invite">JOIN THE CONVERSATION</h2>
 
           <form className="comments__form" >
-            <div className="comments__image-container" >
+            <div className="comment__form-image-container" >
               <div className="comment__image comment__profile-pic profile-pic" id="profile-pic">
               </div>
             </div>

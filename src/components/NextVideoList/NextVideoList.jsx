@@ -19,13 +19,15 @@ class NextVideoList extends Component {
     render() {
         return (
             <section className="nextVideoList__container">
+                <h3 className="nextVideoList__title">NEXT VIDEO</h3>
                 {this.props.vidArray.map((show) => {
             return (
                 <NextVideoItem 
-                onClick={this.handleClick}
+                whenClicked={this.props.whenClicked}
                 title={show.title} 
                 channel={show.channel} 
                 image={show.image} 
+                id={show.id}
                 key={show.id}
                 /> 
                 );

@@ -10,7 +10,7 @@ class CommentSection extends Component {
     }
     render() {
     return (
-        <section className="Comments__Container">
+        <section className="comments__container">
             <CommentForm />
             {this.props.commentArray.map((comment) =>{
                 return (
@@ -18,6 +18,7 @@ class CommentSection extends Component {
                     name={comment.name}
                     date={Moment(comment.timestamp).fromNow()}
                     comment={comment.comment}
+                    key={comment.id}
                     />
                 )
             })}

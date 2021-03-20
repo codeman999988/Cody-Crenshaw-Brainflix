@@ -11,6 +11,13 @@
     // margin-left: 5%;
     margin-bottom: 1rem;
     margin-top: 2rem;
+
+    @include tablet {
+        margin-top: 3rem;
+        @include H1-DT;
+        margin-bottom: 1.5rem;
+
+    }
 }
 
 .article__channel {
@@ -19,6 +26,11 @@
     margin-right: 2.5%;
     display: inline-block;
     font-weight: $demi-bold;
+
+    @include tablet {
+        display: inline;
+        width: 100px;
+    }
 }
 
 .article__channel-date-container {
@@ -26,6 +38,9 @@
     margin-bottom: 2rem;
     align-items: flex-start;
     // justify-content: flex-start;
+    @include tablet {
+        margin-bottom: 0;
+    }
 }
 
 .article__date {
@@ -35,6 +50,12 @@
     font-weight: $fontreg;
     position: relative;
     top: 2px;
+
+    @include tablet{
+        display: inline;
+        width: 10rem;
+
+    }
 }
 
 .article__views-container{
@@ -48,11 +69,18 @@
     display: flex;
     padding-bottom: 1.5rem;
     border-bottom: 2px solid $merc;
+
+    @include tablet {
+        border-bottom: none;
+        padding-bottom: none;
+    }
+
 }
 
 .article__likes-container{
     display: flex;
     align-items: flex-start;
+    margin-left: 1.5rem;
 }
 
 .article__counter {
@@ -64,6 +92,10 @@ margin-left: .5rem;
 
 .article__container{
     margin: 0 1rem 1.5rem 1rem;
+
+    @include tablet {
+        margin: 0 1.5rem 0 1.5rem;
+    }
 }
 
 .article__content {
@@ -71,9 +103,29 @@ margin-left: .5rem;
     margin-top: 1.5rem;
     margin-bottom: 2.5rem;
 
+    @include tablet {
+        width: 63.5vw;
+        @include H4-para-DT;
+    }
+
 }
 
 .comments__title{
     @include H2-MOB;
     font-weight: $demi-bold;
+
+    @include tablet {
+        @include H4-para-DT;
+        font-weight: $bold;
+        margin-bottom: 2rem;
+    }
+}
+
+.article__stats-container {
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid $merc;
+        margin-right: 1.5rem;
+    }
 }

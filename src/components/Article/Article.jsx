@@ -16,6 +16,7 @@ class Article extends Component {
         return (
             <div className="article__container">
                 <h1 className="article__title">{this.props.title}</h1>
+                <div className="article__stats-container">
                 <div className="article__channel-date-container">
             <h3 className="article__channel">By {this.props.channel}</h3>
                     <h4 className="article__date">{Moment(this.props.date).fromNow()}</h4>
@@ -28,6 +29,7 @@ class Article extends Component {
                     <div className='article__likes-container'>
                         <img src={LikesIcon}/>
                         <h4 className="article__counter">{this.props.likes}</h4>
+                    </div>
                     </div>
                 </div>
                 <p className="article__content">{this.props.desc}</p>
