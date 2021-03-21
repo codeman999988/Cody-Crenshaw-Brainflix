@@ -12,6 +12,11 @@
         padding-left: 0;
     }
 
+    @include desktop {
+        align-items: flex-start;
+        padding: 0;
+    }
+
     &__button {
         margin-bottom: 2rem;
         background-color: $buttonBlue;
@@ -56,6 +61,7 @@
 
         @include desktop {
             margin-bottom: 1.5rem;
+            width: 436px;
         }
 
         &:focus {
@@ -72,7 +78,7 @@
         width: 100%;
 
         @include desktop {
-            width: 36.666666666vw;
+            // width: 36.666666666vw;
         }
     }
 
@@ -126,8 +132,8 @@
         }
 
         @include desktop {
-            margin-bottom: 3.5rem;
-            margin-left: -4.125rem;
+
+            margin-left: 0;
         }
     }
 }
@@ -221,7 +227,7 @@
         }
 
         @include desktop {
-            margin-top: 1.5rem;
+            // margin-top: 1.5rem;
         }
     }
 

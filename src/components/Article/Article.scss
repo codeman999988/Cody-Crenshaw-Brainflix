@@ -30,6 +30,7 @@
     @include tablet {
         display: inline;
         width: 100px;
+        @include H3-DT;
     }
 }
 
@@ -40,6 +41,8 @@
     // justify-content: flex-start;
     @include tablet {
         margin-bottom: 0;
+        justify-content: flex-end;
+
     }
 }
 
@@ -54,8 +57,14 @@
     @include tablet{
         display: inline;
         width: 10rem;
+        @include H3-DT;
+        position: initial;
 
     }
+}
+
+.article__desktop-container {
+    @include flexCol;
 }
 
 .article__views-container{
@@ -88,6 +97,20 @@
 font-weight: $fontreg;
 display: inline-block;
 margin-left: .5rem;
+
+@include tablet {
+    @include H4-list-DT;
+}
+
+@include desktop {
+    margin-right: 2rem;
+}
+}
+
+.article__art-com-container {
+    @include desktop {
+        @include flexCol;
+    }
 }
 
 .article__container{
@@ -95,6 +118,10 @@ margin-left: .5rem;
 
     @include tablet {
         margin: 0 1.5rem 0 1.5rem;
+    }
+
+    @include desktop {
+        margin: 0;
     }
 }
 
@@ -106,6 +133,10 @@ margin-left: .5rem;
     @include tablet {
         width: 63.5vw;
         @include H4-para-DT;
+    }
+
+    @include desktop {
+        width: 88%;
     }
 
 }

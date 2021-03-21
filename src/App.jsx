@@ -37,6 +37,8 @@ class App extends Component {
       <HeroVideo 
       poster={this.state.CurrentVideo.image}
       />
+      <div className="desktop-container">
+      <div className="desktop-art-container">
       <Article 
       title= {this.state.CurrentVideo.title}
       channel= {this.state.CurrentVideo.channel}
@@ -49,6 +51,8 @@ class App extends Component {
       <CommentSection 
       commentArray= {this.state.CurrentVideo.comments}
       />
+      </div>
+      <div>
       <NextVideoList 
       vidArray= {this.state.VideoArray.filter((obj) => obj !== this.state.CurrentVideo)}
       whenClicked= { (event) => {
@@ -58,6 +62,8 @@ class App extends Component {
       }
     }
       />
+      </div>
+      </div>
     </div>
   );
 }}

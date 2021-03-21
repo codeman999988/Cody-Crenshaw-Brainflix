@@ -1,5 +1,5 @@
-@use 'partials/variables' as *;
-@use 'partials/mixins' as *;
+@import  './partials/variables';
+@import "./partials/mixins";
 
 *{
   box-sizing: border-box;
@@ -9,5 +9,16 @@ body {
   width: 100vw;
   overflow-x: hidden;
 
+}
+
+.desktop-container {
+  @include desktop{
+    display: flex;
+    margin: 0 180px;
+  }
+}
+
+.desktop-art-container {
+  width: 712px;
 }
 

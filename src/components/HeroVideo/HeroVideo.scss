@@ -11,6 +11,11 @@
         width: 91.145833333%;
         height: 52.08333333vw;
     }
+
+    @include desktop {
+        width: 65.555555555%;
+        height: 37.5vw;
+    }
 }
 
 .hero__video-container{
