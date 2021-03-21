@@ -10,9 +10,7 @@
 
     @include tablet {
         flex-direction: row;
-        // align-items:space-between;
         justify-content: space-between;
-
         padding: 0 1.5rem;
         padding-top: 1rem;
         height: 5rem;
@@ -21,92 +19,6 @@
             padding: 1rem 11.25rem 0 11.25rem;
             overflow-x: intitial;
         }
-
-
-    }
-
-    &__profile-image {
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-        background-image: url('../../assets/Mohan-muruge.jpg');
-        background-size: cover;
-
-        @include desktop {
-
-        }
-
-    }
-
-
-    
-    &__logo{
-        width: 10rem;
-        height: 2rem;
-        padding: 12px 0;
-
-    }
-
-    &__logo-container {
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-
-        @include tablet {
-            margin-right: 10.5625rem;
-
-        }
-
-        @include desktop {
-            margin-right: 35.347222222%;
-        }
-    }
-
-    &__search-container {
-        position: relative;
-    }
-
-
-    &__searchBar {
-        height: 3rem;
-        border-radius: 4px;
-        width: 95%;
-        border-color: $silver;
-        padding-left: 2rem;
-        background-image: "../../assets/Icon-search.svg";
-        position: relative;
-       
-
-        @include tablet {
-            width: 11.25rem;
-            justify-self: flex-end;
-            margin-right: 1.5rem;
-            // margin-right: -6rem;
-        }
-
-        @include desktop {
-            // margin-right: -6rem;
-        }
-
-        &:focus {
-            border:none;
-            outline:none;
-        }
-    }  
-    
-    &__search-icon {
-        // background-image: "../../assets/Icon-search.svg";
-        height: 16px;
-        width: 16px;
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-        z-index: 1;
-
-
-
     }
 
     &__btn {
@@ -120,7 +32,6 @@
         border: none;
         font-weight: $bold;
         @include H3-DT;
-
 
         @include tablet {
             // margin: 0 1.5rem;
@@ -150,8 +61,38 @@
             align-items: flex-start;
             justify-self: flex-end;
         }
-
     }
+
+    &__logo{
+        width: 10rem;
+        height: 2rem;
+        padding: 12px 0;
+    }
+
+    &__logo-container {
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        @include tablet {
+            margin-right: 10.5625rem;
+        }
+
+        @include desktop {
+            margin-right: 35.347222222%;
+        }
+    }
+
+    &__profile-image {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-image: url('../../assets/Mohan-muruge.jpg');
+        background-size: cover;
+    }
+
 
     &__profile-pic {
         width: 3rem;
@@ -161,6 +102,39 @@
         margin-right: 1.5rem;
     }
 
+    &__searchBar {
+        height: 3rem;
+        border-radius: 4px;
+        width: 95%;
+        border-color: $silver;
+        padding-left: 2rem;
+        background-image: "../../assets/Icon-search.svg";
+        position: relative;
+
+        @include tablet {
+            width: 11.25rem;
+            justify-self: flex-end;
+            margin-right: 1.5rem;
+        }
+
+        &:focus {
+            border:none;
+            outline:none;
+        }
+    }  
+
+    &__search-container {
+        position: relative;
+    }
+
+    &__search-icon {
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1;
+    }
 }
 
 

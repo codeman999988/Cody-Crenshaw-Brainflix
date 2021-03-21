@@ -8,25 +8,24 @@ class CommentSection extends Component {
     constructor(props) {
         super(props);
     }
-    render() {
+render() {
     return (
         <section className="comments__container">
             <CommentForm />
-            {this.props.commentArray.map((comment) =>{
+                {this.props.commentArray.map((comm) =>{
                 return (
                     <Comment
-                    name={comment.name}
-                    date={Moment(comment.timestamp).fromNow()}
-                    comment={comment.comment}
-                    key={comment.id}
+                    name={comm.name}
+                    date={Moment(comm.timestamp).fromNow()}
+                    comment={comm.comment}
+                    key={comm.id}
                     />
-                )
-            })}
-            
-
+                        )
+                    })
+                }
         </section>
-    );
-}
+            );
+        }
 }
 
 export default CommentSection;

@@ -9,19 +9,15 @@ class NextVideoList extends Component {
     constructor(props) {
         super(props);
     }
-    
 
-    handleClick = (e) => {
-        console.log(e.target);
-        //      this.setState({vids: [...this.state]})
-    }
-    
     render() {
         return (
             <section className="nextVideoList__container">
-                <h3 className="nextVideoList__title">NEXT VIDEO</h3>
+                <h3 className="nextVideoList__title">
+                    NEXT VIDEO
+                </h3>
                 {this.props.vidArray.map((show) => {
-            return (
+                    return (
                 <NextVideoItem 
                 whenClicked={this.props.whenClicked}
                 title={show.title} 

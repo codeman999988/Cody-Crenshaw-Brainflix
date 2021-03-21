@@ -52,7 +52,7 @@ class App extends Component {
       commentArray= {this.state.CurrentVideo.comments}
       />
       </div>
-      <div>
+      <>
       <NextVideoList 
       vidArray= {this.state.VideoArray.filter((obj) => obj !== this.state.CurrentVideo)}
       whenClicked= { (event) => {
@@ -62,7 +62,7 @@ class App extends Component {
       }
     }
       />
-      </div>
+      </>
       </div>
     </div>
   );

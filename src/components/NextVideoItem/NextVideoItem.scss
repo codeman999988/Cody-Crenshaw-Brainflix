@@ -3,12 +3,18 @@
 
 .videoItem {
 
-
     &__author {
         @include H2-MOB;
         font-weight: $fontreg;
         display: inline-block;
-}
+    }
+
+    &__container {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem
+    }
 
     &__image {
         width: 37.5%;
@@ -28,22 +34,12 @@
         }
     }
 
-    &__container {
-        width: 100%;
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 1.5rem
-    }
-
     &__title {
         @include H2-MOB;
         font-weight: $demi-bold;
         display: inline-block;
         overflow:hidden;
-        // white-space:pre-wrap;
-        // text-overflow: ellipsis;
         height: 13.75vw;
-        // overflow-wrap: normal;
         justify-self: flex-start;
         display: -webkit-box;
         -webkit-line-clamp: 2;
