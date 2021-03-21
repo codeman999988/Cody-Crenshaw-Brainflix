@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import NextVideoItem from '../NextVideoItem/NextVideoItem';
 import './NextVideoList.scss';
-import VideoDetails from '../../Data/video-details.json';
-
-
 
 class NextVideoList extends Component {
     constructor(props) {
@@ -19,16 +16,17 @@ class NextVideoList extends Component {
                 {this.props.vidArray.map((show) => {
                     return (
                 <NextVideoItem 
-                whenClicked={this.props.whenClicked}
-                title={show.title} 
-                channel={show.channel} 
-                image={show.image} 
-                id={show.id}
-                key={show.id}
+                    whenClicked={this.props.whenClicked}
+                    title={show.title} 
+                    channel={show.channel} 
+                    image={show.image} 
+                    id={show.id}
+                    key={show.id}
                 /> 
                 );
-            })}
-            </section>
+            }
+            )}
+        </section>
         )
     }
 }

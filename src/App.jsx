@@ -23,42 +23,38 @@ class App extends Component {
   }
 
   handleSubmit = (event) => {
-
   }
-// {if(this.state.CurrentVideo.id == "something"){
 
-// }
-// }
 
   render () {
+    const site = this.state;
     return (
     <div className="App">
       <Header />
       <HeroVideo 
-      poster={this.state.CurrentVideo.image}
+        poster={site.CurrentVideo.image}
       />
       <div className="desktop-container">
       <div className="desktop-art-container">
       <Article 
-      title= {this.state.CurrentVideo.title}
-      channel= {this.state.CurrentVideo.channel}
-      desc= {this.state.CurrentVideo.description}
-      date= {this.state.CurrentVideo.timestamp}
-      views= {this.state.CurrentVideo.views}
-      likes= {this.state.CurrentVideo.likes}
-      comments= {this.state.CurrentVideo.comments.length}
+        title= {site.CurrentVideo.title}
+        channel= {site.CurrentVideo.channel}
+        desc= {site.CurrentVideo.description}
+        date= {site.CurrentVideo.timestamp}
+        views= {site.CurrentVideo.views}
+        likes= {site.CurrentVideo.likes}
+        comments= {site.CurrentVideo.comments.length}
       />
       <CommentSection 
-      commentArray= {this.state.CurrentVideo.comments}
+        commentArray= {site.CurrentVideo.comments}
       />
       </div>
       <>
       <NextVideoList 
-      vidArray= {this.state.VideoArray.filter((obj) => obj !== this.state.CurrentVideo)}
-      whenClicked= { (event) => {
-        const answer = StateArray.find((obj) => obj.id === event.target.id);
-        console.log(answer);
-       this.setState({CurrentVideo: answer});
+      vidArray= {site.VideoArray.filter((obj) => obj !== site.CurrentVideo)}
+      whenClicked= { (e) => {
+      const answer = StateArray.find((obj) => obj.id === e.target.id);
+      this.setState({CurrentVideo: answer});
       }
     }
       />
