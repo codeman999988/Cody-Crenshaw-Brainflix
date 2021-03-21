@@ -17,6 +17,7 @@
     @include desktop {
         align-items: flex-start;
         padding: 0;
+        width: 100%;
     }
 
     &__container {
@@ -24,6 +25,10 @@
 
         @include tablet {
             width: initial;
+        }
+
+        @include desktop {
+            width: 100%;
         }
     }
 
@@ -39,10 +44,15 @@
         border-radius: 4px;
 
         @include tablet {
-            width: 10rem;
+            width: 180px;            ;
             align-self: flex-end;
             height: 3rem;
             margin-bottom: 1.5rem;
+        }
+
+        @include desktop {
+            // margin-left: 3rem,
+            margin-right: 2rem;
         }
 
         &:hover {
@@ -73,6 +83,7 @@
         @include desktop {
             margin-bottom: 1.5rem;
             width: 436px;
+            // margin-left: -5rem;
         }
 
         &:focus {
@@ -83,17 +94,21 @@
     }
 
     &__form {
+
         display: flex;
         justify-content: center;
         border-bottom: 2px solid $merc;
         width: 100%;
         margin-left: -1rem;
+        justify-content: flex-start;
 
         @include tablet {
-            justify-content: flex-start;
+            box-sizing: content-box;
             margin-left: 0;
+
         }
         @include desktop {
+            justify-content: space-between;
             // width: 36.666666666vw;
         }
     }
@@ -104,6 +119,7 @@
         padding-left: 1rem;
 
         @include tablet {
+            width: 100%;
             flex-direction: row;
         }
     }
@@ -193,6 +209,10 @@
             width: 624px;
             overflow-x: none;
 
+        }
+
+        @include desktop {
+            width: 43.333333333vw;
         }
     }
 

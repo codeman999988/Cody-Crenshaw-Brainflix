@@ -1,70 +1,69 @@
 @import '../../partials/_variables';
 @import '../../partials/_mixins';
 
-.videoItem{
+.videoItem {
 
 
     &__author {
-@include H2-MOB;
-font-weight: $fontreg;
-display: inline-block;
+        @include H2-MOB;
+        font-weight: $fontreg;
+        display: inline-block;
 }
 
-&__image {
-    width: 37.5%;
-    height: 21.875vw;
-    margin: 0 5%;
-    border-radius: 4px;
+    &__image {
+        width: 37.5%;
+        height: 21.875vw;
+        margin: 0 5%;
+        border-radius: 4px;
 
-    @include tablet {
-        width: 15.625%;
-        height: 9.114583333vw;
-        margin: 0 1.5rem;
+        @include tablet {
+            width: 15.625%;
+            height: 9.114583333vw;
+            margin: 0 1.5rem;
+        }
 
+        @include desktop {
+            width: 120px;
+            height: 70px;
+        }
     }
 
-    @include desktop {
-        width: 120px;
-        height: 70px;
+    &__container {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem
     }
 
-
-}
-
-&__container {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 1.5rem
-}
-
-&__txt-container {
-    @include flexCol;
-    width: 46.875%;
-    justify-content: flex-start;
-
-    @include tablet {
-        width: 176px;
-    }
-    
-
-}
-
-&__title {
-    @include H2-MOB;
-    font-weight: $demi-bold;
-    display: inline-block;
-    // overflow:hidden;
-    // white-space:pre-wrap;
-    text-overflow: ellipsis;
-    height: 13.75vw;
-    // overflow-wrap: normal;
-    justify-self: flex-start;
-
-    @include tablet {
-        height: initial;
-        @include H3-DT;
+    &__title {
+        @include H2-MOB;
         font-weight: $demi-bold;
+        display: inline-block;
+        overflow:hidden;
+        // white-space:pre-wrap;
+        // text-overflow: ellipsis;
+        height: 13.75vw;
+        // overflow-wrap: normal;
+        justify-self: flex-start;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        @include tablet {
+            height: initial;
+            @include H3-DT;
+            font-weight: $demi-bold;
+        }
     }
-}
+
+    &__txt-container {
+        @include flexCol;
+        width: 46.875%;
+        justify-content: flex-start;
+        height: 70px;;
+
+        @include tablet {
+            width: 176px;
+        }
+    }
 }

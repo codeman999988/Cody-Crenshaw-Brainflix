@@ -90,6 +90,10 @@
     display: flex;
     align-items: flex-start;
     margin-left: 1.5rem;
+
+    @include desktop {
+        margin-left: none;
+    }
 }
 
 .article__counter {
@@ -103,7 +107,7 @@ margin-left: .5rem;
 }
 
 @include desktop {
-    margin-right: 2rem;
+    // margin-right: 2rem;
 }
 }
 
@@ -123,6 +127,7 @@ margin-left: .5rem;
 
     @include desktop {
         margin: 0;
+        width: 49.444444444vw;
     }
 }
 
@@ -131,6 +136,7 @@ margin-left: .5rem;
     margin-top: 1.5rem;
     margin-bottom: 2.5rem;
     padding-right: 2rem;
+    width: 95%;
 
     @include tablet {
         width: 73%;
@@ -160,6 +166,6 @@ margin-left: .5rem;
         justify-content: space-between;
         border-bottom: 2px solid $merc;
         margin-right: 6rem;
-        width: 49.444444444%;
+        overflow-x:unset;
     }
 }

@@ -10,13 +10,16 @@
 
     @include tablet {
         flex-direction: row;
-        align-items:flex-start;
-        margin-bottom: 1.5rem;
+        // align-items:space-between;
+        justify-content: space-between;
+
         padding: 0 1.5rem;
         padding-top: 1rem;
+        height: 5rem;
 
         @include desktop {
             padding: 1rem 11.25rem 0 11.25rem;
+            overflow-x: intitial;
         }
 
 
@@ -28,6 +31,10 @@
         border-radius: 50%;
         background-image: url('../../assets/Mohan-muruge.jpg');
         background-size: cover;
+
+        @include desktop {
+
+        }
 
     }
 
@@ -48,11 +55,12 @@
 
 
         @include tablet {
-            // align-items: center;
+            margin-right: 10.5625rem;
+
         }
 
         @include desktop {
-            margin-right: 31.825rem;
+            margin-right: 35.347222222%;
         }
     }
 
@@ -64,11 +72,23 @@
     &__searchBar {
         height: 3rem;
         border-radius: 4px;
-        width: 100%;
+        width: 95%;
         border-color: $silver;
-        padding-left: 1.75rem;
+        padding-left: 2rem;
         background-image: "../../assets/Icon-search.svg";
         position: relative;
+       
+
+        @include tablet {
+            width: 11.25rem;
+            justify-self: flex-end;
+            margin-right: 1.5rem;
+            // margin-right: -6rem;
+        }
+
+        @include desktop {
+            // margin-right: -6rem;
+        }
 
         &:focus {
             border:none;
@@ -78,11 +98,11 @@
     
     &__search-icon {
         // background-image: "../../assets/Icon-search.svg";
-        // height: 16px;
-        // width: 16px;
+        height: 16px;
+        width: 16px;
         position: absolute;
-        top: .75rem;
-        left: .5rem;
+        top: 1rem;
+        left: 1rem;
         z-index: 1;
 
 
@@ -103,8 +123,14 @@
 
 
         @include tablet {
-            margin: 0 1.5rem;
-            width: 100px;
+            // margin: 0 1.5rem;
+            // width: 100px;
+            margin-right: 1.5rem;
+            width: 10rem;
+        }
+
+        @include desktop {
+            // width: 10rem;
         }
 
         &:focus {
@@ -122,6 +148,7 @@
         @include tablet {
             margin-top: 0;
             align-items: flex-start;
+            justify-self: flex-end;
         }
 
     }
