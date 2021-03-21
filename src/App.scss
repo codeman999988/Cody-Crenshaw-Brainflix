@@ -14,11 +14,12 @@ body {
 .desktop-container {
   @include desktop{
     display: flex;
-    margin: 0 180px;
+    margin: 0 12.5%;
   }
 }
 
 .desktop-art-container {
-  width: 712px;
+  @include desktop {
+  width: 49.444444%;
 }
-
+}

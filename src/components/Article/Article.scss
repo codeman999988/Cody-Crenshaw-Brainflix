@@ -115,6 +115,7 @@ margin-left: .5rem;
 
 .article__container{
     margin: 0 1rem 1.5rem 1rem;
+    width: 100vw;
 
     @include tablet {
         margin: 0 1.5rem 0 1.5rem;
@@ -129,9 +130,10 @@ margin-left: .5rem;
     @include H4-MOB;
     margin-top: 1.5rem;
     margin-bottom: 2.5rem;
+    padding-right: 2rem;
 
     @include tablet {
-        width: 63.5vw;
+        width: 73%;
         @include H4-para-DT;
     }
 
@@ -157,6 +159,7 @@ margin-left: .5rem;
         display: flex;
         justify-content: space-between;
         border-bottom: 2px solid $merc;
-        margin-right: 1.5rem;
+        margin-right: 6rem;
+        width: 49.444444444%;
     }
 }

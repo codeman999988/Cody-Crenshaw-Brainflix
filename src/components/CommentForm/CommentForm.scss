@@ -6,15 +6,25 @@
     padding: 0 1rem;
     margin-bottom: 2.5rem;
     align-items: center;
-    width: 100%;
+    width: 100vw;
 
     @include tablet {
         padding-left: 0;
+        margin-bottom: 0;
+        overflow-x: none;
     }
 
     @include desktop {
         align-items: flex-start;
         padding: 0;
+    }
+
+    &__container {
+        width: 100vw;
+
+        @include tablet {
+            width: initial;
+        }
     }
 
     &__button {
@@ -32,6 +42,7 @@
             width: 10rem;
             align-self: flex-end;
             height: 3rem;
+            margin-bottom: 1.5rem;
         }
 
         &:hover {
@@ -76,7 +87,12 @@
         justify-content: center;
         border-bottom: 2px solid $merc;
         width: 100%;
+        margin-left: -1rem;
 
+        @include tablet {
+            justify-content: flex-start;
+            margin-left: 0;
+        }
         @include desktop {
             // width: 36.666666666vw;
         }
@@ -84,7 +100,8 @@
 
     &__form-container {
         @include flexCol;
-        width: 100%;
+        width: 80%;
+        padding-left: 1rem;
 
         @include tablet {
             flex-direction: row;
@@ -124,7 +141,7 @@
         color: $silver;
         margin-bottom: .5rem;
         align-self: flex-start;
-        margin-left: 54px;
+        margin-left: 4rem;
 
         @include tablet {
             margin-left: 62px;
@@ -143,9 +160,13 @@
     padding-bottom: 1.5rem;
     border-bottom: 2px solid $merc;
     margin: 0 1rem;
+    width: 100%;
+    padding-right: 2rem;
 
     @include tablet {
         margin: 0;
+        padding-right: 0;
+        margin-top: 1.5rem;
     }
 
     &__btn-container {
@@ -155,7 +176,13 @@
     }
     &__container {
         @include flexCol;
-        width: 100%;
+        width: 80%;
+        padding-left: 1rem;
+
+        @include tablet {
+            padding-right: 0;
+        }
+        
     }
 
     &__content {
@@ -163,7 +190,9 @@
 
         @include tablet {
             @include H4-para-DT;
-            width: 94.832826747%;
+            width: 624px;
+            overflow-x: none;
+
         }
     }
 
@@ -175,7 +204,7 @@
 
         @include tablet {
             margin-left: .5rem;
-            margin-top: 1.75rem;
+            margin-top: .25rem;
         }
     }
 
@@ -218,8 +247,10 @@
         height: 3rem;
         border-radius: 50%;
         margin-top: 1rem;
-        margin-right: 6px;
+        // margin-right: 6px;
         background-color: $silver;
+        // margin-right: 1rem;
+  
 
         @include tablet{
             margin-top: 0;
@@ -238,7 +269,7 @@
             justify-content: flex-end;
             align-items: flex-start;
             margin-right: .5rem;
-            margin-top: 1.5rem;
+            // margin-top: 1.5rem;
             height: initial;
         }
         // margin-right: 6px;
@@ -276,6 +307,7 @@
 
         @include tablet {
             @include H3-DT;
+            margin-top: 0;
         }
     }
 

@@ -20,7 +20,7 @@ let videoState = "";
         return (
             <>
             <div className='videoItem__container' key={this.props.id}>
-                <img onClick={this.props.whenClicked}  className="videoItem__image" src={this.props.image} id={this.props.id}/>
+                <img onClick={this.props.whenClicked}  className="videoItem__image" alt={this.props.alt} src={this.props.image} id={this.props.id}/>
                 <div className="videoItem__txt-container">
                     <h3 className="videoItem__title">
                         {this.props.title}
