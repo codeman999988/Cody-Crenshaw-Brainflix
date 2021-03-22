@@ -4,6 +4,10 @@ It is a mock-website that represents a video site that has different videos that
 
 It has limited functionality as it can not currently play videos or perform searches.
 
+In sprints two and three more functionality will be added to Brainflix.
+
+
+
 
 
 
