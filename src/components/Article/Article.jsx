@@ -11,40 +11,41 @@ class Article extends Component {
         super(props);
     }
     render() {
+        const video = this.props;
         return (
             <div className="article__container">
                 <h1 className="article__title">
-                    {this.props.title}
+                    {video.title}
                 </h1>
                 <div className="article__stats-container">
                     <div className="article__channel-date-container">
                         <h3 className="article__channel">
-                By {this.props.channel}
+                By {video.channel}
                         </h3>
                         <h4 className="article__date">
-                            {Moment(this.props.date).fromNow()}
+                            {Moment(video.date).fromNow()}
                         </h4>
                     </div>
                     <div className="article__like-views-container">
                         <div className="article__views-container">
                             <img src={ViewsIcon} />
                             <h4 className="article__counter">
-                                {this.props.views}
+                                {video.views}
                             </h4>
                         </div>
                         <div className='article__likes-container'>
                             <img src={LikesIcon}/>
                             <h4 className="article__counter">
-                                {this.props.likes}
+                                {video.likes}
                             </h4>
                         </div>
                     </div>
                 </div>
                     <p className="article__content">
-                        {this.props.desc}
+                        {video.desc}
                     </p>
                 <h2 className='comments__title'>
-                    {this.props.comments} Comments
+                    {video.comments} Comments
                 </h2>
             </div>
         )

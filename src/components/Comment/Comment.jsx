@@ -9,6 +9,7 @@ import './Comment.scss';
         }
 
         render() {
+            const comment = this.props;
             return (
                 <div className="comment">
                     <div className="comment__image-container">
@@ -18,14 +19,14 @@ import './Comment.scss';
                 <div className="comment__container">
                     <div className="comment__name-date-cont">
                         <p className="comment__name">
-                            {this.props.name}
+                            {comment.name}
                         </p>
                         <p className="comment__date">
-                            {this.props.date}
+                            {comment.date}
                         </p>
                     </div> 
                     <p className="comment__content">
-                        {this.props.comment}
+                        {comment.comment}
                     </p>
                 </div>
             </div>)}};

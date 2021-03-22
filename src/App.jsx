@@ -9,11 +9,7 @@ import VideoDetails from "./Data/video-details.json";
 import cloneDeep from 'lodash';
 
 let VideoState = cloneDeep(VideoDetails);
-
 let StateArray = VideoState.__wrapped__;
-//const answer = StateArray.find((obj) => obj.id === "1am3jruuwagz");
-//console.log(answer);
-
 
 class App extends Component {
   
@@ -25,7 +21,6 @@ class App extends Component {
   handleSubmit = (event) => {
   }
 
-
   render () {
     const site = this.state;
     return (
@@ -35,30 +30,30 @@ class App extends Component {
         poster={site.CurrentVideo.image}
       />
       <div className="desktop-container">
-      <div className="desktop-art-container">
-      <Article 
-        title= {site.CurrentVideo.title}
-        channel= {site.CurrentVideo.channel}
-        desc= {site.CurrentVideo.description}
-        date= {site.CurrentVideo.timestamp}
-        views= {site.CurrentVideo.views}
-        likes= {site.CurrentVideo.likes}
-        comments= {site.CurrentVideo.comments.length}
-      />
-      <CommentSection 
-        commentArray= {site.CurrentVideo.comments}
-      />
-      </div>
-      <>
-      <NextVideoList 
-      vidArray= {site.VideoArray.filter((obj) => obj !== site.CurrentVideo)}
-      whenClicked= { (e) => {
-      const answer = StateArray.find((obj) => obj.id === e.target.id);
-      this.setState({CurrentVideo: answer});
-      }
-    }
-      />
-      </>
+        <div className="desktop-art-container">
+          <Article 
+            title= {site.CurrentVideo.title}
+            channel= {site.CurrentVideo.channel}
+            desc= {site.CurrentVideo.description}
+            date= {site.CurrentVideo.timestamp}
+            views= {site.CurrentVideo.views}
+            likes= {site.CurrentVideo.likes}
+            comments= {site.CurrentVideo.comments.length}
+          />
+          <CommentSection 
+            commentArray= {site.CurrentVideo.comments}
+          />
+          </div>
+          <>
+          <NextVideoList 
+          vidArray= {site.VideoArray.filter((obj) => obj !== site.CurrentVideo)}
+          whenClicked= { (e) => {
+          const answer = StateArray.find((obj) => obj.id === e.target.id);
+          this.setState({CurrentVideo: answer});
+          }
+        }
+          />
+          </>
       </div>
     </div>
   );
