@@ -25,15 +25,20 @@ body {
   }
   @include desktop{
     display: flex;
-    // margin-left: 12.5%;
-    // width: 49.44444444vw;
+    padding: 0;
+    justify-content: space-between;
   }
 }
 
-.article__container {
-  padding: 0 1.5rem;
-}
 
 .desktop-art-container {
   // width: 90%;
+}
+
+.left-side {
+  @include desktop {
+  width: 49.44444444vw;
+  margin-left: 12.5%;
+  margin-right: 1.5rem;
+}
 }

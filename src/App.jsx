@@ -26,29 +26,30 @@ class App extends Component {
     return (
     <div className="App">
       <Header />
+
+
       <HeroVideo 
         video={site.CurrentVideo}
         poster={site.CurrentVideo.image}
       />
-      <div className="desktop-container">
-        <div className="desktop-art-container">
-
+            <div className="desktop-container">
+              <div className="left-side">
+          <Article video={site.CurrentVideo} />
           <CommentSection 
             commentArray= {site.CurrentVideo.comments}
           />
           </div>
-          <>
           <NextVideoList 
           vidArray= {site.VideoArray.filter((obj) => obj !== site.CurrentVideo)}
           whenClicked= { (e) => {
           const answer = StateArray.find((obj) => obj.id === e.target.id);
           this.setState({CurrentVideo: answer});
           }
-        }
-          />
-          </>
+        } 
+        />
+        </div>
       </div>
-    </div>
+
   );
 }}
 

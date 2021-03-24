@@ -17,7 +17,7 @@ import Article from '../Article/Article';
                     <source></source>
                 </video>
             </div>
-            <Article video={this.props.video} />
+            {/* <Article video={this.props.video} /> */}
             </>
             )
     }

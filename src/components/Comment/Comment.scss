@@ -15,6 +15,11 @@
         margin-top: 1.5rem;
     }
 
+    @include desktop {
+        // margin-left: 12.5vw;
+        width: 100%;
+    }
+
     &__btn-container {
         display: flex;
         justify-content: space-between;
@@ -42,7 +47,7 @@
         }
 
         @include desktop {
-            // width: 43.333333333vw;
+            width: 100%;
         }
     }
 
@@ -110,6 +115,10 @@
 
         @include tablet {
             justify-content: initial;
+        }
+
+        @include desktop{
+            width: 100%;
         }
     }
 }
