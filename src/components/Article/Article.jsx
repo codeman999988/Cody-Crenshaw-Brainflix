@@ -11,7 +11,8 @@ class Article extends Component {
         super(props);
     }
     render() {
-        const video = this.props;
+        const video = this.props.video;
+        console.log(video.title);
         return (
             <div className="article__container">
                 <h1 className="article__title">
@@ -23,7 +24,7 @@ class Article extends Component {
                 By {video.channel}
                         </h3>
                         <h4 className="article__date">
-                            {Moment(video.date).fromNow()}
+                            {Moment(video.timestamp).fromNow()}
                         </h4>
                     </div>
                     <div className="article__like-views-container">
@@ -42,10 +43,10 @@ class Article extends Component {
                     </div>
                 </div>
                     <p className="article__content">
-                        {video.desc}
+                        {video.description}
                     </p>
                 <h2 className='comments__title'>
-                    {video.comments} Comments
+                    {video.comments.length} Comments
                 </h2>
             </div>
         )

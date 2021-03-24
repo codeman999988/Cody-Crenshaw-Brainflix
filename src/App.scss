@@ -1,26 +1,39 @@
 @import  './partials/variables';
 @import "./partials/mixins";
+@use "./partials/_fonts" as *;
+
 
 *{
   box-sizing: border-box;
+  font-family: "Avenir Next", "Roboto", sans-serif;
 }
 
 body {
-  width: 100vw;
+  // width: 100vw;
   overflow-x: hidden;
 
 }
 
+.App {
+  // width: 100vw;
+}
 .desktop-container {
+  padding: 0 1rem;
+
+  @include tablet {
+    padding: 0 1.5rem;
+  }
   @include desktop{
     display: flex;
-    margin-left: 12.5%;
-    width: 49.44444444vw;
+    // margin-left: 12.5%;
+    // width: 49.44444444vw;
   }
 }
 
-.desktop-art-container {
-  @include desktop {
-  // width: 49.4444vw;
+.article__container {
+  padding: 0 1.5rem;
 }
+
+.desktop-art-container {
+  // width: 90%;
 }

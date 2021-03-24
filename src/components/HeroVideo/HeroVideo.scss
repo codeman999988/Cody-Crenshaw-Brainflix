@@ -7,6 +7,7 @@
     height: 57.1875vw;
 
     @include tablet {
+        width: 91.145833333vw;
         height: 52.08333333vw;
     }
 
@@ -16,5 +17,12 @@
 }
 
 .hero__video-container{
+    display: flex;
+    justify-content: center;
+    height: 57.1875vw;
     background-color: black;
+
+    @include tablet {
+        height: 52.08333333vw;
+    }
 }

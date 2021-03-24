@@ -27,19 +27,12 @@ class App extends Component {
     <div className="App">
       <Header />
       <HeroVideo 
+        video={site.CurrentVideo}
         poster={site.CurrentVideo.image}
       />
       <div className="desktop-container">
         <div className="desktop-art-container">
-          <Article 
-            title= {site.CurrentVideo.title}
-            channel= {site.CurrentVideo.channel}
-            desc= {site.CurrentVideo.description}
-            date= {site.CurrentVideo.timestamp}
-            views= {site.CurrentVideo.views}
-            likes= {site.CurrentVideo.likes}
-            comments= {site.CurrentVideo.comments.length}
-          />
+
           <CommentSection 
             commentArray= {site.CurrentVideo.comments}
           />

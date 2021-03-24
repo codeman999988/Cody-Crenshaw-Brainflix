@@ -10,21 +10,20 @@
 
     @include tablet {
         flex-direction: row;
-        justify-content: space-between;
+        // justify-content: space-between;
         padding: 0 1.5rem;
         padding-top: 1rem;
         height: 5rem;
 
         @include desktop {
             padding: 1rem 11.25rem 0 11.25rem;
-            overflow-x: intitial;
         }
     }
 
     &__btn {
         background-color: $buttonBlue;
-        width: 222px;
-        margin-right: 1rem;
+        width: 224px;
+        // margin-right: 1rem;
         height: 3rem;
         color: $alab;
         border-radius: 4px;
@@ -35,9 +34,9 @@
 
         @include tablet {
             // margin: 0 1.5rem;
-            // width: 100px;
+            width: 100px;
             margin-right: 1.5rem;
-            width: 10rem;
+            // width: 10rem;
         }
 
         @include desktop {
@@ -53,14 +52,14 @@
     &__btn-container {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-between;
         margin-top: .5rem;
 
         @include tablet {
             margin-top: 0;
             align-items: flex-start;
             justify-self: flex-end;
-            margin-right: 1.5rem;
+            // margin-right: 1.5rem;
         }
     }
 
@@ -82,7 +81,7 @@
         }
 
         @include desktop {
-            margin-right: 35.347222222%;
+            // margin-right: 35.347222222%;
         }
     }
 
@@ -100,22 +99,22 @@
         height: 3rem;
         border-radius: 50%;
         display: inline-block;
-        margin-right: 1.5rem;
+        // margin-right: 1.5rem;
     }
 
     &__searchBar {
         height: 3rem;
         border-radius: 4px;
-        width: 95%;
+        width: 100%;
         border-color: $silver;
         padding-left: 2rem;
         background-image: "../../assets/Icon-search.svg";
         position: relative;
 
         @include tablet {
-            width: 11.25rem;
+            width: 15.5rem;
             justify-self: flex-end;
-            margin-right: 1.5rem;
+            // margin-right: 1.5rem;
         }
 
         &:focus {
@@ -125,7 +124,13 @@
     }  
 
     &__search-container {
+        width: 100%;
         position: relative;
+
+        @include tablet {
+            width: 14.5rem;
+            margin-right: 1.5rem;
+        }
     }
 
     &__search-icon {

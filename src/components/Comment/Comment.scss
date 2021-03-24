@@ -5,9 +5,9 @@
     display: flex;
     padding-bottom: 1.5rem;
     border-bottom: 2px solid $merc;
-    margin: 0 1rem;
-    width: 100%;
-    padding-right: 2rem;
+    // margin: 0 1rem;
+    // width: 100%;
+    // padding-right: 2rem;
 
     @include tablet {
         margin: 0;
@@ -22,7 +22,7 @@
     }
     &__container {
         @include flexCol;
-        width: 80%;
+        // width: 80%;
         padding-left: 1rem;
 
         @include tablet {
@@ -36,13 +36,13 @@
 
         @include tablet {
             @include H4-para-DT;
-            width: 624px;
-            overflow-x: none;
+            width: 81.25vw;
+            // overflow-x: none;
 
         }
 
         @include desktop {
-            width: 43.333333333vw;
+            // width: 43.333333333vw;
         }
     }
 
@@ -83,7 +83,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: flex-start;
-            margin-right: .5rem;
+            // margin-right: .5rem;
             // margin-top: 1.5rem;
             height: initial;
         }
@@ -106,7 +106,7 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 1rem;
-        width: 100%;
+        // width: 100%;
 
         @include tablet {
             justify-content: initial;
