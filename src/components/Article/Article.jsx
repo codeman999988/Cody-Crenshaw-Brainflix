@@ -3,6 +3,7 @@ import './Article.scss';
 import ViewsIcon from '../../assets/Icon-views.svg';
 import LikesIcon from '../../assets/Icon-likes.svg';
 import Moment from 'moment';
+import axios from 'axios';
 
 
 
@@ -10,12 +11,21 @@ class Article extends Component {
     constructor(props) {
         super(props);
     }
+
+    componentDidMount(){
+        axios
+        .get(`https://project-2-api.herokuapp.com/videos/${this.props.video.id}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
+        .then(result =>{
+            console.log(result)
+        })
+    }
     render() {
-        const video = this.props.video;
-        console.log(video.title);
+        console.log(this.props)
+        // const video = this.props.video;
+        // console.log(video.title);
         return (
             <div className="article__container">
-                <h1 className="article__title">
+                {/* <h1 className="article__title">
                     {video.title}
                 </h1>
                 <div className="article__stats-container">
@@ -47,7 +57,7 @@ class Article extends Component {
                     </p>
                 <h2 className='comments__title'>
                     {video.comments.length} Comments
-                </h2>
+                </h2> */}
             </div>
         )
     }    

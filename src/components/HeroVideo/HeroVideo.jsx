@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './HeroVideo.scss';
 import Article from '../Article/Article';
+import {BrowserRouter as Router} from "react-router-dom";
 
  class HeroVideo extends Component {
     constructor(props) {
@@ -8,12 +9,15 @@ import Article from '../Article/Article';
     }
     
 
+
     render() {
-        console.log(this.props);
+        console.log(this.props.match.params);
+        console.log(this.props)
+        const video = this.props.videoArray.find(eL => eL.id == this.props.match.params.id);
         return (
             <>
             <div className="hero__video-container">
-                <video poster={this.props.poster}  className="hero__video" controls={true}>
+                <video poster={video.image}  className="hero__video" controls={true}>
                     <source></source>
                 </video>
             </div>
@@ -24,6 +28,8 @@ import Article from '../Article/Article';
 }
 
 export default HeroVideo;
+
+{/* <video poster={this.props.poster.find(eL => eL.id == this.props.match.params.id).image}  className="hero__video" controls={true}> */}
 
 
 

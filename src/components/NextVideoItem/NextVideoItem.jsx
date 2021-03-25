@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./NextVideoItem.scss";
+import {Link, BrowserRouter as Router} from 'react-router-dom';
 
 
  class NextVideoItem extends Component {
@@ -10,10 +11,16 @@ import "./NextVideoItem.scss";
     
     render() {
         const video = this.props;
+        
         return (
             <>
             <div className='videoItem__container' key={video.id}>
-                <img onClick={video.whenClicked}  className="videoItem__image" alt={video.alt} src={video.image} id={video.id}/>
+            <Router>
+             <Link to={`/video/${video.id}`} >
+                <img className="videoItem__image" alt={video.alt} src={video.image} id={video.id}/>
+                </Link>
+                </Router>
+            
                 <div className="videoItem__txt-container">
                     <h3 className="videoItem__title">
                         {video.title}
@@ -29,3 +36,5 @@ import "./NextVideoItem.scss";
 }
 
 export default NextVideoItem;
+
+// <img onClick={video.whenClicked}  className="videoItem__image" alt={video.alt} src={video.image} id={video.id}/>
