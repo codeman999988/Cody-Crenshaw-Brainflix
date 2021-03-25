@@ -34,6 +34,10 @@ class App extends Component {
       this.setState({CurrentVideo: result.data[0],VideoArray: result.data});
     })
   }
+
+  componentDidUpdate(prevProps, prevState){
+
+  }
   render () {
     const site = this.state;
     return (
@@ -44,7 +48,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={(routeProps) => <HomePage poster={site.CurrentVideo} {...routeProps}  />} 
       />
-      <Route path='/video/:id' render={(routeProps) => <HeroVideo videoArray={site.VideoArray} {...routeProps}  />} />
+      <Route path='/video/:id' render={(routeProps) => <HeroVideo currentVideo={site.CurrentVideo}videoArray={site.VideoArray} {...routeProps}  />} />
           </Switch>
           </Router>
             <div className="desktop-container">
@@ -59,8 +63,9 @@ class App extends Component {
           <NextVideoList 
           vidArray= {site.VideoArray.filter((obj) => obj !== site.CurrentVideo)}
           whenClicked= { (e) => {
-          const answer = StateArray[2];
-          console.log(e.target.id);
+
+          const answer = StateArray.find(eL => eL.id == e.target.id);
+          console.log(answer);
           this.setState({CurrentVideo: answer});
           }
         } 

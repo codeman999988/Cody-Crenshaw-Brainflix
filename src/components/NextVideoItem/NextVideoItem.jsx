@@ -11,13 +11,13 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
     
     render() {
         const video = this.props;
-        
+
         return (
             <>
             <div className='videoItem__container' key={video.id}>
             <Router>
              <Link to={`/video/${video.id}`} >
-                <img className="videoItem__image" alt={video.alt} src={video.image} id={video.id}/>
+                <img  className="videoItem__image" alt={video.alt} src={video.image} id={video.id}/>
                 </Link>
                 </Router>
             
@@ -38,3 +38,5 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
 export default NextVideoItem;
 
 // <img onClick={video.whenClicked}  className="videoItem__image" alt={video.alt} src={video.image} id={video.id}/>
+
+// onClick={video.whenClicked}

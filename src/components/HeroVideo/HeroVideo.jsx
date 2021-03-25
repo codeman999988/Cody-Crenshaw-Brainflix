@@ -8,7 +8,9 @@ import {BrowserRouter as Router} from "react-router-dom";
         super(props);
     }
     
-
+    componentDidUpdate(prevProps, prevState){
+        
+    }
 
     render() {
         console.log(this.props.match.params);
@@ -17,7 +19,7 @@ import {BrowserRouter as Router} from "react-router-dom";
         return (
             <>
             <div className="hero__video-container">
-                <video poster={video.image}  className="hero__video" controls={true}>
+                <video poster={this.props.currentVideo.image}  className="hero__video" controls={true}>
                     <source></source>
                 </video>
             </div>
