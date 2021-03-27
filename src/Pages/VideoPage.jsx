@@ -51,7 +51,7 @@ import axios from 'axios';
             <HeroVideo currentVideo={this.state.currentVideo} videoArray={this.props.videoArray}  />
             <div className="desktop-container">
               <div className="left-side">
-            <Article currentVideo={this.props.currentVideo} videoArray={this.props.videoArray} />
+            <Article currentVideo={this.state.currentVideo} videoArray={this.props.videoArray} />
             <CommentSection currentVideo={this.props.currentVideo} videoArray={this.props.videoArray}/>
             </div>
             <NextVideoList currentVideo={this.props.currentVideo} videoArray={this.props.videoArray}/>

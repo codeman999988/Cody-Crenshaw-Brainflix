@@ -58,8 +58,9 @@ cbfunction = () =>{
     return (
  
     <div className="App">
+            <Router>
       <Header />
-      <Router>
+
         <Switch>
           <Route exact path='/' render={(routeProps) => <HomePage currentVideo={this.state.currentVideo} videoArray={this.state.videoArray} {...routeProps}  />} 
       />

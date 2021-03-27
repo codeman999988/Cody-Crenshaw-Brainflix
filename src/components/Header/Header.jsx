@@ -2,12 +2,15 @@ import React from 'react';
 import './Header.scss';
 import {ReactComponent as BrainflixLogo} from '../../assets/Logo-brainflix.svg';
 import magGlass from "../../assets/Icon-search.svg";
+import {Link, BrowserRouter as Router} from 'react-router-dom';
 
 const Header = () => {
     return (
         <header className="header">
             <div className="header__logo-container">
-                <BrainflixLogo className="header__Logo"/>
+                <Link to="/">
+                    <BrainflixLogo className="header__Logo"/>
+                </Link>
             </div>
             <div className="header__search-container">
                 <img className="header__search-icon" src={magGlass}/>

@@ -21,19 +21,36 @@ class Article extends Component {
 }
 
     componentDidMount(){
-        // axios
-        // .get(`https://project-2-api.herokuapp.com/videos/${this.props.video.id}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
-        // .then(result =>{
-        //     console.log(result)
-        //     this.setState({
-        //         articleTitle: result.data.title, 
-        //         articleChannel: result.data.channel, 
-        //         articleTimestamp: result.data.timestamp, 
-        //         articleViews: result.data.views, 
-        //         articleLikes: result.data.likes,
-        //         articleDesc: result.data.description
-        //     })
-        // })
+        axios
+        .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
+        .then(result =>{
+            console.log(result)
+            this.setState({
+                articleTitle: result.data.title, 
+                articleChannel: result.data.channel, 
+                articleTimestamp: result.data.timestamp, 
+                articleViews: result.data.views, 
+                articleLikes: result.data.likes,
+                articleDesc: result.data.description
+            })
+        })
+    }
+
+    componentDidUpdate(prevProps){
+        if(this.props.currentVideo !== prevProps.currentVideo)
+        axios
+        .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
+        .then(result =>{
+            console.log(result)
+            this.setState({
+                articleTitle: result.data.title, 
+                articleChannel: result.data.channel, 
+                articleTimestamp: result.data.timestamp, 
+                articleViews: result.data.views, 
+                articleLikes: result.data.likes,
+                articleDesc: result.data.description
+            })
+        })
     }
     render() {
         console.log(this.props)

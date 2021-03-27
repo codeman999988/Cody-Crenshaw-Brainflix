@@ -16,11 +16,11 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
         return (
             <>
             <div className='videoItem__container' key={video.id}>
-            <Router>
+
              <Link to={`/video/${video.id}`} >
                 <img  className="videoItem__image" alt={video.alt} src={video.image} id={video.id}/>
                 </Link>
-                </Router>
+
             
                 <div className="videoItem__txt-container">
                     <h3 className="videoItem__title">
