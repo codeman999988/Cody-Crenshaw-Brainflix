@@ -17,9 +17,11 @@ const Header = () => {
                 <input type="search" className="header__searchBar" placeholder={"Search..." } alt="Search" result="0"/>
             </div>
             <div className="header__btn-container">
+                <Link to="/upload">
                 <button className="header__btn">
                 ＋ UPLOAD
                 </button>
+                </Link>
             <>
                 <div className="header__profile-image" id="profile-pic"> </div>
             </>

@@ -1,0 +1,87 @@
+@import '../partials/_variables';
+@import '../partials/_mixins';
+@use '../partials/fonts' as *;
+
+.upload {
+margin: 0 1rem;
+@include flexCol;
+
+
+    &__title {
+        @include H1-MOB;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+}
+
+    &__label {
+        @include H4-MOB;
+        font-weight: $demi-bold;
+        color: $silver;
+    }
+
+    &__form {
+        @include flexCol;
+    }
+
+    &__description-input {
+        height: 44.6875vw;
+        padding: .5rem;
+        margin-bottom: 2rem;
+        border-radius: 4px;
+        background-color: $alab;
+        border: 2px solid $merc;
+
+        &:focus {
+            outline: none;
+            border: 3px solid $buttonBlue;
+            background-color: $white;
+        }
+    }
+
+    &__title-input {
+        padding: .5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 4px;
+        background-color: $alab;
+        border: 2px solid $merc;
+
+        &:focus {
+            outline: none;
+            border: 3px solid $buttonBlue;
+            background-color: $white;
+        }
+    }
+
+    &__video-thumbnail {
+        width: 100%;
+        height: 47.8125vw;
+        border-radius: 4px;
+        margin-bottom: 2rem;
+
+    }
+
+    &__publish-button {
+        height: 3rem;
+        font-weight: $bold;
+        background-color: $buttonBlue;
+        color: $alab;
+        @include H2-MOB;
+        border: none;
+        border-radius: 4px;
+
+        &:focus {
+            border:none;
+            outline:none;
+        }
+
+    }
+
+    &__cancel {
+        @include H2-MOB;
+        align-self: center;
+        margin-top: 1.5rem;
+        color: $buttonBlue;
+        font-weight: $bold;
+        margin-bottom: 1.5rem;
+    }
+}
