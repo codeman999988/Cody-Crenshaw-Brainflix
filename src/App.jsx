@@ -10,48 +10,72 @@ import cloneDeep from 'lodash';
 import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 import HomePage from "./Pages/HomePage";
 import axios from 'axios';
+import { relativeTimeThreshold } from 'moment';
+import UploadPage from './Pages/UploadPage';
+import VideoPage from './Pages/VideoPage';
 
 
 
 //"api_key": "5ded7161-325c-4ff1-9693-25657ee3c456
-let VideoState = cloneDeep(VideoDetails);
-let StateArray = VideoState.__wrapped__;
+
 
 class App extends Component {
   
   state={
-    CurrentVideo: StateArray[0],
-    VideoArray: StateArray,
+    CurrentVideo: '',
+    VideoArray: null,
   }
 
-  handleSubmit = (event) => {
-  }
+cbfunction = () =>{
+
+}
 
   componentDidMount() {
     axios
     .get("https://project-2-api.herokuapp.com/videos?api_key=5ded7161-325c-4ff1-9693-25657ee3c456")
     .then(result => {
-      this.setState({CurrentVideo: result.data[0],VideoArray: result.data});
+      console.log(result.data[0].id);
+      this.setState({currentVideo: result.data[0].id,videoArray: result.data}, this.cbfunction);
     })
   }
 
   componentDidUpdate(prevProps, prevState){
+    // if(this.state != prevState){
+    //   this.setState({})
+      // axios
+      // .get("https://project-2-api.herokuapp.com/videos?api_key=5ded7161-325c-4ff1-9693-25657ee3c456")
+      // .then(result => {
+      //   console.log(result.data[0].id);
+      //   this.setState({currentVideo: result.data[0].id,videoArray: result.data});
+      // })
+    }
 
-  }
+
+  
   render () {
-    const site = this.state;
+ 
+    console.log(this.props)
     return (
  
     <div className="App">
       <Header />
       <Router>
         <Switch>
-          <Route exact path='/' render={(routeProps) => <HomePage poster={site.CurrentVideo} {...routeProps}  />} 
+          <Route exact path='/' render={(routeProps) => <HomePage currentVideo={this.state.currentVideo} videoArray={this.state.videoArray} {...routeProps}  />} 
       />
-      <Route path='/video/:id' render={(routeProps) => <HeroVideo currentVideo={site.CurrentVideo}videoArray={site.VideoArray} {...routeProps}  />} />
+      <Route path='/video/:id' render={(routeProps) => this.state.videoArray && <VideoPage currentVideo={this.state.currentVideo} videoArray={this.state.videoArray} {...routeProps}  />} />
+      <Route path='/upload' component={UploadPage} />
           </Switch>
           </Router>
-            <div className="desktop-container">
+      </div>
+
+  );
+}}
+
+export default App;
+
+// const answer = StateArray.find((obj) => obj.id === e.target.id);
+            {/* <div className="desktop-container">
               <div className="left-side">
  
           <Article video={site.CurrentVideo} />
@@ -70,12 +94,4 @@ class App extends Component {
           }
         } 
         />
-        </div>
-      </div>
-
-  );
-}}
-
-export default App;
-
-// const answer = StateArray.find((obj) => obj.id === e.target.id);
+        </div> */}

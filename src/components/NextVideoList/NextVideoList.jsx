@@ -8,12 +8,13 @@ class NextVideoList extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <section className="nextVideoList__container">
                 <h3 className="nextVideoList__title">
                     NEXT VIDEO
                 </h3>
-                {this.props.vidArray.map((show) => {
+                {this.props.videoArray && this.props.videoArray.map((show) => {
                     return (
                 <NextVideoItem 
                     whenClicked={this.props.whenClicked}

@@ -21,11 +21,11 @@ class CommentSection extends Component {
     // }
 
 componentDidMount() {
-    axios
-    .get(`https://project-2-api.herokuapp.com/videos/${this.props.commentArray.id}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
-    .then(result => {
-        this.setState({commentsArray: result.data.comments})
-    })
+    // axios
+    // .get(`https://project-2-api.herokuapp.com/videos/${this.props.commentArray.id}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
+    // .then(result => {
+    //     this.setState({commentsArray: result.data.comments})
+    // })
 }
 
     // componentDidMount() {
