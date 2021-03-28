@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import './HeroVideo.scss';
-import Article from '../Article/Article';
-import {BrowserRouter as Router} from "react-router-dom";
 
  class HeroVideo extends Component {
-    constructor(props) {
-        super(props);
-    }
+
 
     // state= {currentVideo: "",
     //         videoVideo: null
@@ -36,7 +32,7 @@ import {BrowserRouter as Router} from "react-router-dom";
             <>
 
             <div className="hero__video-container">
-                <video poster={this.props.videoArray && this.props.currentVideo && this.props.videoArray.find(eL => eL.id == this.props.currentVideo).image || this.props.videoArray && this.props.currentVideo && this.props.videoArray.find(eL => eL.id == "1af0jruup5gu").image}   className="hero__video" controls={true}>
+                <video poster={(this.props.videoArray && this.props.currentVideo && this.props.videoArray.find(eL => eL.id == this.props.currentVideo).image) || (this.props.videoArray && this.props.currentVideo && this.props.videoArray.find(eL => eL.id == "1af0jruup5gu").image)}   className="hero__video" controls={true}>
                     <source></source>
                 </video>
             </div>

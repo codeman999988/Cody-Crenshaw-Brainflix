@@ -9,9 +9,6 @@ import imag from "../assets/Upload-video-preview.jpg";
 
 
 class UploadPage extends Component {
-    constructor(props) {
-        super(props);
-    }
 
 formSubmit = () => {
     // alert("Upload success");
@@ -20,16 +17,15 @@ formSubmit = () => {
 }
 
 render() {
-    console.log(this.props)
     return (
         
         <div className="upload">
-            {/* {console.log(this.props)} */}
+
             <h2 className="upload__title">Upload Video</h2>
             <div className="upload__flex-container" >
             <div className="upload__image-container">
                 <h4 className="upload__label upload__label--top">VIDEO THUMBNAIL</h4>
-                <img src={imag} className="upload__video-thumbnail"/>
+                <img src={imag} className="upload__video-thumbnail" alt="handlebars" />
                 </div>
             <form onSubmit={() => {
                 alert("Image uploaded");

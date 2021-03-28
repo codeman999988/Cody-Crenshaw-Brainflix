@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import './App.scss';
 import Header from "./components/Header/Header.jsx";
-
 import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
-
 import axios from 'axios';
-
 import UploadPage from './Pages/UploadPage';
 import VideoPage from './Pages/VideoPage';
 
@@ -13,6 +10,8 @@ import VideoPage from './Pages/VideoPage';
 
 //"api_key": "5ded7161-325c-4ff1-9693-25657ee3c456
 
+const test = "/video/testertester";
+console.log(test.slice(7));
 
 class App extends Component {
   
@@ -28,26 +27,24 @@ class App extends Component {
     .get("https://project-2-api.herokuapp.com/videos?api_key=5ded7161-325c-4ff1-9693-25657ee3c456")
     .then(result => {
       // console.log(result.data[0].id);
-      this.setState({currentVideo: result.data[0].id,videoArray: result.data}, this.cbfunction);
+      this.setState({currentVideo: window.location.pathname.slice(7),videoArray: result.data});
     })
   }
 
-  componentDidUpdate(prevProps, prevState){
-    // if(this.state != prevState){
-    //   this.setState({})
-      // axios
-      // .get("https://project-2-api.herokuapp.com/videos?api_key=5ded7161-325c-4ff1-9693-25657ee3c456")
-      // .then(result => {
-      //   console.log(result.data[0].id);
-      //   this.setState({currentVideo: result.data[0].id,videoArray: result.data});
-      // })
+  componentDidUpdate(prevProps, prevState) {
+    if(this.state.currentVideo !== prevState.currentVideo){
+      this.setState({currentVideo: window.location.pathname.slice(7)})
     }
+  }
+
+
 
 
   
   render () {
  
-    // console.log(this.props)
+    console.log(this.props);
+    console.log(window);
     return (
  
     <div className="App">
@@ -67,25 +64,3 @@ class App extends Component {
 }}
 
 export default App;
-
-// const answer = StateArray.find((obj) => obj.id === e.target.id);
-            {/* <div className="desktop-container">
-              <div className="left-side">
- 
-          <Article video={site.CurrentVideo} />
-
-          <CommentSection 
-            commentArray= {site.CurrentVideo}
-          />
-          </div>
-          <NextVideoList 
-          vidArray= {site.VideoArray.filter((obj) => obj !== site.CurrentVideo)}
-          whenClicked= { (e) => {
-
-          const answer = StateArray.find(eL => eL.id == e.target.id);
-          console.log(answer);
-          this.setState({CurrentVideo: answer});
-          }
-        } 
-        />
-        </div> */}

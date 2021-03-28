@@ -8,9 +8,7 @@ import axios from 'axios';
 
 
 class Article extends Component {
-    constructor(props) {
-        super(props);
-    }
+
 
     state= {
         articleTitle: "",
@@ -69,13 +67,13 @@ class Article extends Component {
                     </div>
                     <div className="article__like-views-container">
                         <div className="article__views-container">
-                            <img src={ViewsIcon} />
+                            <img src={ViewsIcon} alt="View Counter"/>
                             <h4 className="article__counter">
                                 {this.state.articleViews}
                             </h4>
                         </div>
                         <div className='article__likes-container'>
-                            <img src={LikesIcon}/>
+                            <img src={LikesIcon} alt="Like Counter" />
                             <h4 className="article__counter">
                                 {this.state.articleLikes}
                             </h4>
@@ -85,9 +83,6 @@ class Article extends Component {
                     <p className="article__content">
                         {this.state.articleDesc}
                     </p>
-                {/* <h2 className='comments__title'>
-                    {video.comments.length} Comments
-                </h2> */}
             </div>
         )
     }    

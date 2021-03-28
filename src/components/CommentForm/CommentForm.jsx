@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './CommentForm.scss';
-import axios from 'axios';
 
 
 
