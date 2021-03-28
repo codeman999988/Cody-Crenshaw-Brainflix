@@ -37,12 +37,15 @@
             width: 23.4375vw;
             align-self: flex-end;
             height: 3rem;
-            margin-bottom: 1.5rem;
+            // margin-bottom: 1.5rem;
             margin-left: 1rem;
+            margin-bottom: 1rem;
+
         }
 
         @include desktop {
             width: 12.5vw;
+            margin-bottom: 1.5rem;
         }
 
         &:hover {
@@ -111,6 +114,7 @@
         @include tablet {
             // width: 100%;
             flex-direction: row;
+            justify-content: flex-end;
         }
 
         @include desktop {
@@ -145,6 +149,33 @@
     &__title {
         @include H2-MOB;
         margin-bottom: 2rem;
-    }    
+    }
+    
+    &__name-input {
+        height: 3rem;
+        width: 69.375vw;
+        margin-bottom: .5rem;
+        background-color: $alab;
+        border: 2px solid $merc;
+        border-radius: 5px;
+        padding-left: .5rem;
+
+
+        @include tablet {
+            width: 28.645833333vw;
+        }
+
+        @include desktop {
+            width: 15.1388888885vw;
+        }
+
+    }
+
+    &__input-container {
+        @include tablet {
+            @include flexCol;
+
+        }
+    }
 }
 

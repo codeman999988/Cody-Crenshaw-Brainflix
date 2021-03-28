@@ -9,7 +9,7 @@ class NextVideoList extends Component {
 
 
     render() {
-        console.log(this.props);
+
         return (
             <section className="nextVideoList__container">
                 <h3 className="nextVideoList__title">

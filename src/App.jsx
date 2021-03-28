@@ -1,16 +1,11 @@
 import React, { Component } from 'react'
 import './App.scss';
 import Header from "./components/Header/Header.jsx";
-import HeroVideo from "./components/HeroVideo/HeroVideo.jsx";
-import Article from "./components/Article/Article.jsx";
-import CommentSection from './components/CommentSection/CommentSection.jsx'
-import NextVideoList from './components/NextVideoList/NextVideoList.jsx';
-import VideoDetails from "./Data/video-details.json";
-import cloneDeep from 'lodash';
+
 import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
-import HomePage from "./Pages/HomePage";
+
 import axios from 'axios';
-import { relativeTimeThreshold } from 'moment';
+
 import UploadPage from './Pages/UploadPage';
 import VideoPage from './Pages/VideoPage';
 

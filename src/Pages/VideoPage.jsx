@@ -44,17 +44,14 @@ import axios from 'axios';
     if(prevProps.match.params.id !== this.props.match.params.id) {
         this.setState({currentVideo: this.props.match.params.id ?? "1af0jruup5gu"})
     }
-    console.log("updated");
-    console.log(prevProps);
-    console.log(this.props);
-    console.log(this.props.match.params.id)
+
     }
 
 
 
 
     render() {
-        console.log(this.props);
+
         return (
             <>
             {/* <div className="hero__video-container">
