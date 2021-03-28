@@ -8,10 +8,7 @@ import VideoPage from './Pages/VideoPage';
 
 
 
-//"api_key": "5ded7161-325c-4ff1-9693-25657ee3c456
 
-const test = "/video/testertester";
-console.log(test.slice(7));
 
 class App extends Component {
   
@@ -26,7 +23,6 @@ class App extends Component {
     axios
     .get("https://project-2-api.herokuapp.com/videos?api_key=5ded7161-325c-4ff1-9693-25657ee3c456")
     .then(result => {
-      // console.log(result.data[0].id);
       this.setState({currentVideo: window.location.pathname.slice(7),videoArray: result.data});
     })
   }
@@ -43,8 +39,6 @@ class App extends Component {
   
   render () {
  
-    console.log(this.props);
-    console.log(window);
     return (
  
     <div className="App">

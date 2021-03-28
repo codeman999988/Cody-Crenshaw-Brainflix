@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.scss';
 import {ReactComponent as BrainflixLogo} from '../../assets/Logo-brainflix.svg';
 import magGlass from "../../assets/Icon-search.svg";
-import {Link, BrowserRouter as Router} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -14,7 +14,7 @@ const Header = () => {
             </div>
             <div className="header__desktop-right-container">
             <div className="header__search-container">
-                <img className="header__search-icon" src={magGlass}/>
+                <img className="header__search-icon" src={magGlass} alt="" />
                 <input type="search" className="header__searchBar" placeholder={"Search..." } alt="Search" result="0"/>
             </div>
             <div className="header__btn-container">

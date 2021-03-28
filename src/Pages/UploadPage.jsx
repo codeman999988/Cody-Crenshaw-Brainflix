@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import "./UploadPage.scss";
 import imag from "../assets/Upload-video-preview.jpg";
 
@@ -8,15 +8,10 @@ import imag from "../assets/Upload-video-preview.jpg";
 
 
 
-class UploadPage extends Component {
+const UploadPage = (props) => {
 
-formSubmit = () => {
-    // alert("Upload success");
-    // history.push("/", )
-    console.log(this.props);
-}
 
-render() {
+
     return (
         
         <div className="upload">
@@ -29,7 +24,7 @@ render() {
                 </div>
             <form onSubmit={() => {
                 alert("Image uploaded");
-                this.props.history.push('/')
+                props.history.push('/')
             }}className="upload__form">
              <div className="upload__form-container">
                 <label className="upload__label ">TITLE YOUR VIDEO</label>
@@ -49,6 +44,6 @@ render() {
         </div>
     )
 }
-}
+
 
 export default UploadPage;

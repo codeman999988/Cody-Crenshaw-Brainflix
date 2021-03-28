@@ -1,15 +1,12 @@
-import { render } from '@testing-library/react';
-import React, { Component } from 'react';
+import React from 'react';
 import './Comment.scss';
 
 
-    class Comment extends Component {
-        constructor(props) {
-            super(props);
-        }
+    const Comment = (props) => {
 
-        render() {
-            const comment = this.props;
+
+
+
             return (
                 <div className="comment">
                     <div className="comment__image-container">
@@ -19,16 +16,16 @@ import './Comment.scss';
                 <div className="comment__container">
                     <div className="comment__name-date-cont">
                         <p className="comment__name">
-                            {comment.name}
+                            {props.name}
                         </p>
                         <p className="comment__date">
-                            {comment.date}
+                            {props.date}
                         </p>
                     </div> 
                     <p className="comment__content">
-                        {comment.comment}
+                        {props.comment}
                     </p>
                 </div>
-            </div>)}};
+            </div>)};
  
     export default Comment;

@@ -5,26 +5,14 @@ import './CommentForm.scss';
 
 
 
-class CommentForm extends Component {
-    constructor(props){
-      super(props);
- 
-      this.state={commentPosted: false}
+const CommentForm = (props) => {
 
-    // this.postComment =this.postComment.bind(this);
-
-  }
-
-
-
-  render() {
-    console.log(this.props);
     return (
       <section className="comments">
         <h2 className="comments__invite">
           JOIN THE CONVERSATION
         </h2>
-        <form onSubmit={(e) => this.props.postComment(e)} className="comments__form" >
+        <form onSubmit={(e) => props.postComment(e)} className="comments__form" >
           <div className="comments__form-image-container" >
             <div className="comment__image comments__profile-pic profile-pic" id="profile-pic">
             </div>
@@ -44,6 +32,6 @@ class CommentForm extends Component {
       </section>
     )
 }
-}
+
 
 export default CommentForm;

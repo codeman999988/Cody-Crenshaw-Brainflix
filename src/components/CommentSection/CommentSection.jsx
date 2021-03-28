@@ -14,16 +14,9 @@ class CommentSection extends Component {
     this.postComment=this.postComment.bind(this);
 }
 
-    // componentDidMount() {axios
-    //     .get(`https://project-2-api.herokuapp.com/videos/${this.props.video.id}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
-    //     .then(result =>{
-    //         this.setState({commentsArray: result.data.comments});
-    //     })
-    // }
 
     postComment = (e) => {
         e.preventDefault();
-        console.log(e);
         axios.post(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}/comments?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`, 
         {  
           "name": `${e.target.name.value}`,
@@ -33,7 +26,7 @@ class CommentSection extends Component {
           e.target.reset();
         })
         .catch(err => {
-          console.log(err)
+          console.warn(err)
         })
       }
 
@@ -49,27 +42,17 @@ componentDidMount() {
 }
 
 componentDidUpdate(prevProps, prevState) {
-    if(this.props.currentVideo !== prevProps.currentVideo || this.state.commentsArray == prevState.commentsArray){
+    if(this.props.currentVideo !== prevProps.currentVideo || this.state.commentsArray === prevState.commentsArray){
    
-    console.log(this.state);
     axios
     .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
     .then(result => {
-       console.log(result)
-        // const newArray = this.state.commentsArray.concat()
         this.setState({commentsArray: result.data.comments.sort(function(a,b) {
             return a.timestamp - b.timestamp;
         })});
     })}
 }
 
-    // componentDidMount() {
-    //     axios
-    //     .get("https://project-2-api.herokuapp.com/videos?api_key=5ded7161-325c-4ff1-9693-25657ee3c456")
-    //     .then(result => {
-    //       this.setState({CurrentVideo: result.data[0],VideoArray: result.data});
-    //     })
-    //   }
 
 render() {
     return (
@@ -92,12 +75,3 @@ render() {
 }
 
 export default CommentSection;
-
-
-// componentDidMount(){
-//     axios
-//     .get(`https://project-2-api.herokuapp.com/videos/${this.props.video.id}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
-//     .then(result =>{
-//         this.setState({commentsArray: result.data.comments})
-//     })
-// }
