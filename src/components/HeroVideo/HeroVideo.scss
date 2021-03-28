@@ -17,6 +17,7 @@ video {
 
     @include desktop {
         height: 37.5vw;
+        width: 65.5555555554vw;
     }
 }
 
@@ -28,5 +29,9 @@ video {
 
     @include tablet {
         height: 52.08333333vw;
+    }
+
+    @include desktop {
+        height: 37.5vw;
     }
 }

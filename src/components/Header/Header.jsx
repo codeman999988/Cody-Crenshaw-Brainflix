@@ -12,6 +12,7 @@ const Header = () => {
                     <BrainflixLogo className="header__Logo"/>
                 </Link>
             </div>
+            <div className="header__desktop-right-container">
             <div className="header__search-container">
                 <img className="header__search-icon" src={magGlass}/>
                 <input type="search" className="header__searchBar" placeholder={"Search..." } alt="Search" result="0"/>
@@ -25,6 +26,7 @@ const Header = () => {
             <>
                 <div className="header__profile-image" id="profile-pic"> </div>
             </>
+        </div>
         </div>
     </header>
     );

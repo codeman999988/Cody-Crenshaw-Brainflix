@@ -16,7 +16,8 @@
         height: 5rem;
 
         @include desktop {
-            padding: 1rem 11.25rem 0 11.25rem;
+            padding: 1rem 12.5vw 0 12.5vw;
+            justify-content: space-between;
         }
     }
 
@@ -141,7 +142,17 @@
         left: 1rem;
         z-index: 1;
     }
+
+    &__desktop-right-container {
+        @include flexCol;
+
+
+        @include tablet {
+        flex-direction: row;
+    }
 }
+}
+
 
 
 

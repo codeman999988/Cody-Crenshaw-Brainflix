@@ -68,7 +68,7 @@ import axios from 'axios';
             <Article currentVideo={this.state.currentVideo} videoArray={this.props.videoArray} />
             <CommentSection currentVideo={this.props.currentVideo} videoArray={this.props.videoArray}/>
             </div>
-            <NextVideoList currentVideo={this.props.currentVideo} videoArray={this.props.videoArray?.filter(el => el.id !== this.props.match.params.id)} />
+            <NextVideoList currentVideo={this.props.currentVideo} videoArray={this.props.videoArray?.filter(el => el.id !== this.state.currentVideo)} />
 
             </div>
             </>

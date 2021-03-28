@@ -2,9 +2,15 @@
 @import '../partials/_mixins';
 @use '../partials/fonts' as *;
 
+
+
 .upload {
 margin: 0 1rem;
 @include flexCol;
+
+@include desktop {
+    margin: 0 12.5vw;
+}
 
 
     &__title {
@@ -34,12 +40,22 @@ margin: 0 1rem;
             @include tablet {
                 padding-top: 2.5rem;
                 border-top: 2px solid $merc;
+
+                
+            }
+            @include desktop {
+                border: none;
+
             }
         }
     }
 
     &__form {
         @include flexCol;
+
+        @include desktop {
+            width: 100%;
+        }
     }
 
     &__description-input {
@@ -54,6 +70,10 @@ margin: 0 1rem;
         @include tablet {
             height: 10rem;
         }    
+
+        @include desktop {
+            height: 94px;
+        }
         &:focus {
             outline: none;
             border: 3px solid $buttonBlue;
@@ -67,6 +87,11 @@ margin: 0 1rem;
         border-radius: 4px;
         background-color: $alab;
         border: 2px solid $merc;
+
+        @include desktop {
+            width: 100%;
+            height: 2.75rem;
+        }
 
         &:focus {
             outline: none;
@@ -84,6 +109,11 @@ margin: 0 1rem;
         @include tablet {
             width: 44.791666666vw;
             height: 23.828125vw;
+        }
+
+        @include desktop {
+            width: 23.8888888888vw;
+            height: 12.7083333333vw;
         }
 
     }
@@ -115,6 +145,8 @@ margin: 0 1rem;
         color: $buttonBlue;
         font-weight: $bold;
         margin-bottom: 1.5rem;
+        background-color: white;
+        border: none;
 
         @include tablet {
             justify-self: center;
@@ -131,4 +163,30 @@ margin: 0 1rem;
         flex-direction: row-reverse;
     }
 }
+
+    &__form-container {
+        @include flexCol;
+
+        @include desktop {
+            padding-top: 2.5rem;  
+            width: 100%;
+            
+        }
+    }
+
+    &__flex-container {
+        
+        @include desktop {
+        display: flex;
+        border-top: 2px solid $merc;
+        }
+    }
+
+    &__image-container {
+        @include flexCol;
+        
+        @include desktop {
+            margin-right: 1.5rem;
+        }
+    }
 }
