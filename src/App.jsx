@@ -26,15 +26,13 @@ class App extends Component {
     VideoArray: null,
   }
 
-cbfunction = () =>{
 
-}
 
   componentDidMount() {
     axios
     .get("https://project-2-api.herokuapp.com/videos?api_key=5ded7161-325c-4ff1-9693-25657ee3c456")
     .then(result => {
-      console.log(result.data[0].id);
+      // console.log(result.data[0].id);
       this.setState({currentVideo: result.data[0].id,videoArray: result.data}, this.cbfunction);
     })
   }
@@ -54,7 +52,7 @@ cbfunction = () =>{
   
   render () {
  
-    console.log(this.props)
+    // console.log(this.props)
     return (
  
     <div className="App">
@@ -62,7 +60,7 @@ cbfunction = () =>{
       <Header />
 
         <Switch>
-          <Route exact path='/' render={(routeProps) => <HomePage currentVideo={this.state.currentVideo} videoArray={this.state.videoArray} {...routeProps}  />} 
+          <Route exact path='/' render={(routeProps) => <VideoPage currentVideo={"1af0jruup5gu"} videoArray={this.state.videoArray} {...routeProps}  />} 
       />
       <Route path='/video/:id' render={(routeProps) => this.state.videoArray && <VideoPage currentVideo={this.state.currentVideo} videoArray={this.state.videoArray} {...routeProps}  />} />
       <Route path='/upload' component={UploadPage} />

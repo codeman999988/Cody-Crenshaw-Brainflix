@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header className="header">
             <div className="header__logo-container">
-                <Link to="/">
+                <Link to={{pathname: "/" }}>
                     <BrainflixLogo className="header__Logo"/>
                 </Link>
             </div>

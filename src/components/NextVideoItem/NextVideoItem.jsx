@@ -11,7 +11,6 @@ import {Link, BrowserRouter as Router} from 'react-router-dom';
     
     render() {
         const video = this.props;
-        // console.log(this.props);
 // console.log(this.props.match.params);
         return (
             <>

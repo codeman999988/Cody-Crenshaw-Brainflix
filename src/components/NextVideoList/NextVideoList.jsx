@@ -7,6 +7,7 @@ class NextVideoList extends Component {
         super(props);
     }
 
+
     render() {
         console.log(this.props);
         return (
@@ -17,7 +18,7 @@ class NextVideoList extends Component {
                 {this.props.videoArray && this.props.videoArray.map((show) => {
                     return (
                 <NextVideoItem 
-                    whenClicked={this.props.whenClicked}
+                    // whenClicked={this.props.whenClicked}
                     title={show.title} 
                     channel={show.channel} 
                     image={show.image} 

@@ -39,7 +39,7 @@ class Article extends Component {
     componentDidUpdate(prevProps){
         if(this.props.currentVideo !== prevProps.currentVideo)
         axios
-        .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
+        .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo || '1af0jruup5gu'}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
         .then(result =>{
             console.log(result)
             this.setState({

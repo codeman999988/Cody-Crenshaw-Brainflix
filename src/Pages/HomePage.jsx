@@ -5,6 +5,7 @@ import HeroVideo from '../components/HeroVideo/HeroVideo';
 import CommentSection from '../components/CommentSection/CommentSection';
 import NextVideoList from '../components/NextVideoList/NextVideoList';
 import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
+import axios from 'axios';
 
  class HomePage extends Component {
     constructor(props) {
@@ -14,6 +15,30 @@ import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
     state={currentVideo: this.props.currentVideo,
            videoArray: this.props.videoArray, 
     }
+
+    componentDidMount() {
+        axios
+        .get("https://project-2-api.herokuapp.com/videos?api_key=5ded7161-325c-4ff1-9693-25657ee3c456")
+        .then(result => {
+        //   console.log(result.data[0].id);
+          this.setState({currentVideo: this.props.match.params.id, videoArray: result.data});
+        })
+      }
+
+
+    componentDidUpdate (prevProps, prevState) {
+    if(prevState.currentVideo !== this.props.match.params.id) {
+        this.setState({currentVideo: this.props.match.params.id})
+    }
+    console.log("updated");
+    console.log(prevProps);
+    console.log(this.props);
+    }
+
+
+
+
+
 
     render() {
         console.log(this.props);

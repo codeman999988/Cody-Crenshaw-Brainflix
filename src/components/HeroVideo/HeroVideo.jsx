@@ -16,12 +16,10 @@ import {BrowserRouter as Router} from "react-router-dom";
  
 
     componentDidMount() {
-        // console.log(this.props.match.params);
         // console.log(this.props)
         // console.log(this.props.videoArray);
-        // console.log(this.props.match.params.id);
         
-        // this.setState({currentVideo: this.props.videoArray.find(eL => eL.id == this.props.match.params.id).image});
+        // this.setState({currentVideo: this.props.videoArray.find(eL => eL.id == this.props.).image});
         // console.log(this.state);
     }
 
@@ -42,7 +40,7 @@ if(this.props == prevProps){
             <>
             {/* {console.log(this.props)} */}
             <div className="hero__video-container">
-                <video poster={this.props.videoArray && this.props.currentVideo && this.props.videoArray.find(eL => eL.id == this.props.currentVideo).image}  className="hero__video" controls={true}>
+                <video poster={this.props.videoArray && this.props.currentVideo && this.props.videoArray.find(eL => eL.id == this.props.currentVideo).image || this.props.videoArray && this.props.currentVideo && this.props.videoArray.find(eL => eL.id == "1af0jruup5gu").image}   className="hero__video" controls={true}>
                     <source></source>
                 </video>
             </div>
