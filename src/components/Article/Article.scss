@@ -24,7 +24,7 @@
         font-weight: $demi-bold;
         margin-block-start: 0;
         margin-block-end: 0;
-    
+
         @include tablet {
             display: inline;
             @include H3-DT;
@@ -35,6 +35,7 @@
         display: flex;
         margin-bottom: 2rem;
         align-items: flex-end;
+
         @include tablet {
             margin-bottom: 0;
             justify-content: flex-end;
@@ -62,7 +63,6 @@
         @include desktop {
             width: 49.444444444vw;
         }
-    
     }
 
     &__counter {
@@ -97,17 +97,6 @@
         @include flexCol;
     }
 
-    &__title{
-    @include H1-MOB;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
-
-    @include tablet {
-        @include H1-DT;
-        margin-top: 3rem;
-        margin-bottom: 1.5rem;
-    }
-}
     &__likes-container{
         display: flex;
         align-items: flex-start;
@@ -123,7 +112,7 @@
         align-items: flex-end;
         padding-bottom: 1.5rem;
         border-bottom: 2px solid $merc;
-    
+
         @include tablet {
             border-bottom: none;
             padding-bottom: none;
@@ -136,6 +125,18 @@
             justify-content: space-between;
             align-items: flex-start;
             border-bottom: 2px solid $merc;
+        }
+    }
+
+    &__title{
+    @include H1-MOB;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+
+    @include tablet {
+        @include H1-DT;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
         }
     }
 

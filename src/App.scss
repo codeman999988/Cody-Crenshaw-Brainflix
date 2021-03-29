@@ -18,10 +18,10 @@ body {
   @include tablet {
     padding: 0 1.5rem;
   }
+
   @include desktop{
     display: flex;
     padding: 0;
     justify-content: space-between;
   }
 }
-

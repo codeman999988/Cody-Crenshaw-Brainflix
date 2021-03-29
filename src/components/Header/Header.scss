@@ -19,7 +19,7 @@
         padding: 1rem 12.5vw 0 12.5vw;
         justify-content: space-between;
     }
-    
+
     &__btn {
         @include H3-DT;
         background-color: $buttonBlue;
@@ -58,6 +58,14 @@
         }
     }
 
+    &__desktop-right-container {
+        @include flexCol;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
     &__logo{
         width: 10rem;
         height: 2rem;
@@ -70,19 +78,17 @@
         align-items: center;
         justify-content: center;
 
-
         @include tablet {
             margin-right: 10.5625rem;
         }
-
     }
 
     &__profile-image {
+        background-size: cover;
         width: 3rem;
         height: 3rem;
         border-radius: 50%;
         background-image: url('../../assets/Mohan-muruge.jpg');
-        background-size: cover;
     }
 
 
@@ -131,14 +137,6 @@
         left: 1rem;
         z-index: 1;
     }
-
-    &__desktop-right-container {
-        @include flexCol;
-
-        @include tablet {
-        flex-direction: row;
-    }
-}
 }
 
 

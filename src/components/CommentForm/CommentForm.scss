@@ -68,7 +68,7 @@
 
         @include desktop {
             margin-bottom: 1.5rem;
-           width: 30.277777777vw;
+            width: 30.277777777vw;
         }
 
         &:focus {
@@ -110,6 +110,16 @@
         }
     }
 
+    &__form-image-container {
+        height: 100%;
+    }
+
+    &__input-container {
+        @include tablet {
+            @include flexCol;
+        }
+    }
+
     &__invite {
         @include H4-MOB;
         font-weight: $demi-bold;
@@ -124,20 +134,6 @@
         }
     }
 
-    &__form-image-container {
-        height: 100%;
-    }
-
-    &__profile-pic {
-        background-image: url('../../assets/Mohan-muruge.jpg');
-        background-size: cover;
-        }
-
-    &__title {
-        @include H2-MOB;
-        margin-bottom: 2rem;
-    }
-    
     &__name-input {
         height: 3rem;
         width: 69.375vw;
@@ -147,22 +143,23 @@
         border-radius: 5px;
         padding-left: .5rem;
 
+            @include tablet {
+                width: 28.645833333vw;
+            }
 
-        @include tablet {
-            width: 28.645833333vw;
+            @include desktop {
+                width: 15.1388888885vw;
+            }
         }
 
-        @include desktop {
-            width: 15.1388888885vw;
+    &__profile-pic {
+        background-size: cover;
+        background-image: url('../../assets/Mohan-muruge.jpg');
         }
 
-    }
-
-    &__input-container {
-        @include tablet {
-            @include flexCol;
-
-        }
+    &__title {
+        @include H2-MOB;
+        margin-bottom: 2rem;
     }
 }
 
