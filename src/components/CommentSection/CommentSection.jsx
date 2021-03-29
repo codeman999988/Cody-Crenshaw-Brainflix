@@ -8,33 +8,33 @@ import axios from "axios";
 class CommentSection extends Component {
     constructor(props) {
         super(props);
-
-
+    
     this.state={commentsArray: []}
     this.postComment=this.postComment.bind(this);
 }
 
 
-    postComment = (e) => {
-        e.preventDefault();
-        axios.post(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}/comments?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`, 
+postComment = (e) => {
+    e.preventDefault();
+    axios
+    .post(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}/comments?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`, 
         {  
           "name": `${e.target.name.value}`,
           "comment": `${e.target.commentField.value}`
-        }).then(response => {
+        })
+    .then(response => {
           this.setState({lastCommentPosted: e.target.name.value});
           e.target.reset();
         })
-        .catch(err => {
+    .catch(err => {
           console.warn(err)
         })
       }
 
-
 componentDidMount() {
     axios
-    .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
-    .then(result => {
+        .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
+        .then(result => {
         this.setState({commentsArray: result.data.comments.sort(function(a,b) {
             return a.timestamp - b.timestamp;
         })})
@@ -42,36 +42,32 @@ componentDidMount() {
 }
 
 componentDidUpdate(prevProps, prevState) {
-    if(this.props.currentVideo !== prevProps.currentVideo || this.state.commentsArray === prevState.commentsArray){
-   
+    if(this.props.currentVideo !== prevProps.currentVideo
+    || this.state.commentsArray === prevState.commentsArray) {
     axios
-    .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
-    .then(result => {
-        this.setState({commentsArray: result.data.comments.sort(function(a,b) {
+        .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
+        .then(result => {
+            this.setState({commentsArray: result.data.comments.sort(function(a,b) {
             return a.timestamp - b.timestamp;
         })});
     })}
 }
 
-
 render() {
     return (
         <section className="comments__container">
-            <CommentForm postComment={(e)=>{this.postComment(e)}} />
-                {this.state.commentsArray.reverse().map((comm) =>{
-                return (
-                    <Comment
-                    name={comm.name}
-                    date={Moment(comm.timestamp).fromNow()}
-                    comment={comm.comment}
-                    key={comm.id}
-                    />
-                        )
-                    })
-                }
+            <CommentForm 
+            postComment={(e)=>{this.postComment(e)}} />
+            {this.state.commentsArray.reverse().map((comm) =>{ return (
+            <Comment
+            name={comm.name}
+            date={Moment(comm.timestamp).fromNow()}
+            comment={comm.comment}
+            key={comm.id}
+            />
+            )})}
         </section>
-            );
-        }
+);}
 }
 
 export default CommentSection;
