@@ -27,14 +27,12 @@ componentDidMount() {
     }
 }
 
-
 componentDidUpdate (prevProps) {
 if(prevProps.match.params.id !== this.props.match.params.id) {
     this.setState({
         currentVideo: this.props.match.params.id ?? "1af0jruup5gu"
     })
 }}
-
 
 render() {
     return (

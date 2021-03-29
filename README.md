@@ -10,9 +10,3 @@ This version's functionality includes:
 3. Upload page that behaves somewhat as if it allows you to upload videos.
 
 In sprint three more functionality will be added to Brainflix.
-
-
-
-
-
-

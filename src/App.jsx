@@ -13,6 +13,7 @@ class App extends Component {
     VideoArray: null,
   }
 
+  
 componentDidMount() {
   axios
   .get("https://project-2-api.herokuapp.com/videos?api_key=5ded7161-325c-4ff1-9693-25657ee3c456")
@@ -23,7 +24,7 @@ componentDidMount() {
   })
 }
 
-componentDidUpdate(prevProps, prevState) {
+componentDidUpdate(_, prevState) {
   if(this.state.currentVideo !== prevState.currentVideo){
     this.setState({
       currentVideo: window.location.pathname.slice(7)
@@ -32,6 +33,7 @@ componentDidUpdate(prevProps, prevState) {
 }
 
 render () {
+  const {videoArray, currentVideo} = this.state;
   return (
     <div className="App">
       <Router>
@@ -39,11 +41,11 @@ render () {
         <Switch>
           <Route 
           exact path='/' 
-          render={(routeProps) => <VideoPage currentVideo={"1af0jruup5gu"} videoArray={this.state.videoArray} {...routeProps}  />} />
+          render={(routeProps) => <VideoPage currentVideo={"1af0jruup5gu"} videoArray={videoArray} {...routeProps}  />} />
           <Route 
           path='/video/:id' 
-          render={(routeProps) => this.state.videoArray && <VideoPage currentVideo={this.state.currentVideo} 
-          videoArray={this.state.videoArray} {...routeProps}  />} />
+          render={(routeProps) => videoArray && <VideoPage currentVideo={currentVideo} 
+          videoArray={videoArray} {...routeProps}  />} />
           <Route 
           path='/upload' 
           render={(routeProps) => <UploadPage {...routeProps} />} />

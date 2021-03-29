@@ -2,9 +2,10 @@
 @import '../../partials/_mixins';
 
 .nextVideoList {
+
     &__container {
-    @include flexCol;
-    align-items:flex-start;
+        @include flexCol;
+        align-items:flex-start;
 
         @include desktop {
             margin-right: 12.5vw;
