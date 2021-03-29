@@ -9,14 +9,9 @@
 }
 
 body {
-  // width: 100vw;
   overflow-x: hidden;
-
 }
 
-.App {
-  // width: 100vw;
-}
 .desktop-container {
   padding: 0 1rem;
 
@@ -30,15 +25,3 @@ body {
   }
 }
 
-
-.desktop-art-container {
-  // width: 90%;
-}
-
-.left-side {
-  @include desktop {
-  width: 49.44444444vw;
-  margin-left: 12.5%;
-  margin-right: 1.5rem;
-}
-}

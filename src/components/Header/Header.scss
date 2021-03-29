@@ -3,45 +3,40 @@
 
 
 .header {
-    width: 100%;
     @include flexCol;
+    width: 100%;
     padding: 0 1rem;
     height: 169px;
 
     @include tablet {
         flex-direction: row;
-        // justify-content: space-between;
         padding: 0 1.5rem;
         padding-top: 1rem;
         height: 5rem;
-
-        @include desktop {
-            padding: 1rem 12.5vw 0 12.5vw;
-            justify-content: space-between;
-        }
     }
-
+    
+    @include desktop {
+        padding: 1rem 12.5vw 0 12.5vw;
+        justify-content: space-between;
+    }
+    
     &__btn {
+        @include H3-DT;
         background-color: $buttonBlue;
         width: 224px;
-        // margin-right: 1rem;
         height: 3rem;
         color: $alab;
         border-radius: 4px;
         display: inline-block;
         border: none;
         font-weight: $bold;
-        @include H3-DT;
 
         @include tablet {
-            // margin: 0 1.5rem;
             width: 100px;
             margin-right: 1.5rem;
-            // width: 10rem;
         }
 
         @include desktop {
-            // width: 10rem;
         }
 
         &:focus {
@@ -60,7 +55,6 @@
             margin-top: 0;
             align-items: flex-start;
             justify-self: flex-end;
-            // margin-right: 1.5rem;
         }
     }
 
@@ -81,9 +75,6 @@
             margin-right: 10.5625rem;
         }
 
-        @include desktop {
-            // margin-right: 35.347222222%;
-        }
     }
 
     &__profile-image {
@@ -100,7 +91,6 @@
         height: 3rem;
         border-radius: 50%;
         display: inline-block;
-        // margin-right: 1.5rem;
     }
 
     &__searchBar {
@@ -115,7 +105,6 @@
         @include tablet {
             width: 15.5rem;
             justify-self: flex-end;
-            // margin-right: 1.5rem;
         }
 
         &:focus {
@@ -145,7 +134,6 @@
 
     &__desktop-right-container {
         @include flexCol;
-
 
         @include tablet {
         flex-direction: row;
