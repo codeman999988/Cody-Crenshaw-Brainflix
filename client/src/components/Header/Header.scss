@@ -1,0 +1,144 @@
+@import '../../partials/variables';
+@import '../../partials/mixins';
+
+
+.header {
+    @include flexCol;
+    width: 100%;
+    padding: 0 1rem;
+    height: 169px;
+
+    @include tablet {
+        flex-direction: row;
+        padding: 0 1.5rem;
+        padding-top: 1rem;
+        height: 5rem;
+    }
+    
+    @include desktop {
+        padding: 1rem 12.5vw 0 12.5vw;
+        justify-content: space-between;
+    }
+
+    &__btn {
+        @include H3-DT;
+        background-color: $buttonBlue;
+        width: 224px;
+        height: 3rem;
+        color: $alab;
+        border-radius: 4px;
+        display: inline-block;
+        border: none;
+        font-weight: $bold;
+
+        @include tablet {
+            width: 100px;
+            margin-right: 1.5rem;
+        }
+
+        @include desktop {
+        }
+
+        &:focus {
+            border:none;
+            outline:none;
+        }
+    }
+
+    &__btn-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: .5rem;
+
+        @include tablet {
+            margin-top: 0;
+            align-items: flex-start;
+            justify-self: flex-end;
+        }
+    }
+
+    &__desktop-right-container {
+        @include flexCol;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__logo{
+        width: 10rem;
+        height: 2rem;
+        padding: 12px 0;
+    }
+
+    &__logo-container {
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+            margin-right: 10.5625rem;
+        }
+    }
+
+    &__profile-image {
+        background-size: cover;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-image: url('../../assets/Mohan-muruge.jpg');
+    }
+
+
+    &__profile-pic {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    &__searchBar {
+        height: 3rem;
+        border-radius: 4px;
+        width: 100%;
+        border-color: $silver;
+        padding-left: 2rem;
+        background-image: "../../assets/Icon-search.svg";
+        position: relative;
+
+        @include tablet {
+            width: 15.5rem;
+            justify-self: flex-end;
+        }
+
+        &:focus {
+            border:none;
+            outline:none;
+        }
+    }  
+
+    &__search-container {
+        width: 100%;
+        position: relative;
+
+        @include tablet {
+            width: 14.5rem;
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__search-icon {
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1;
+    }
+}
+
+
+
+

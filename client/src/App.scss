@@ -1,0 +1,27 @@
+@import  './partials/variables';
+@import "./partials/mixins";
+@use "./partials/_fonts" as *;
+
+
+*{
+  box-sizing: border-box;
+  font-family: "Avenir Next", "Roboto", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.desktop-container {
+  padding: 0 1rem;
+
+  @include tablet {
+    padding: 0 1.5rem;
+  }
+
+  @include desktop{
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+  }
+}

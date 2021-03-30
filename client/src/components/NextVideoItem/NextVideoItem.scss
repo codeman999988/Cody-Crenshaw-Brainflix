@@ -1,0 +1,64 @@
+@import '../../partials/_variables';
+@import '../../partials/_mixins';
+
+.videoItem {
+
+    &__author {
+        @include H2-MOB;
+        font-weight: $fontreg;
+        display: inline-block;
+    }
+
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+        justify-self: flex-end;
+    }
+
+    &__image {
+        width: 37.5vw;
+        height: 21.875vw;
+        border-radius: 4px;
+
+        @include tablet {
+            width: 15.625vw;
+            height: 9.114583333vw;
+        }
+
+        @include desktop {
+            width: 8.333333333vw;
+            height: 70px;
+        }
+    }
+
+    &__title {
+        @include H2-MOB;
+        font-weight: $demi-bold;
+        display: inline-block;
+        overflow:hidden;
+        height: 13.75vw;
+        justify-self: flex-start;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        @include tablet {
+            height: initial;
+            @include H3-DT;
+            font-weight: $demi-bold;
+        }
+    }
+
+    &__txt-container {
+        @include flexCol;
+        width: 46.875%;
+        justify-content: flex-start;
+        height: 70px;
+        margin-left: 1rem;
+
+        @include tablet {
+            width: 12rem;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@import '../../partials/_variables';
+@import '../../partials/_mixins';
+
+.comments__container {
+    @include desktop {
+        width: 100%;
+    }
+}

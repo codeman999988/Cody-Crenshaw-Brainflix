@@ -1,0 +1,111 @@
+@import '../../partials/_variables';
+@import '../../partials/_mixins';
+
+.comment {
+    display: flex;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid $merc;
+
+        @include tablet {
+            margin: 0;
+            padding-right: 0;
+            margin-top: 1.5rem;
+        }
+
+        @include desktop {
+            width: 100%;
+        }
+
+    &__btn-container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+    }
+
+    &__container {
+        @include flexCol;
+        width: 100%;
+        padding-left: 1rem;
+
+        @include tablet {
+            padding-right: 0;
+        }
+        
+    }
+
+    &__content {
+        @include H4-MOB;
+
+        @include tablet {
+            @include H4-para-DT;
+            width: 81.25vw;
+        }
+
+        @include desktop {
+            width: 100%;
+        }
+    }
+
+    &__date {
+        margin-top: 1.5rem;
+        display: inline-block;
+        @include H4-MOB;
+        color: $silver;
+
+        @include tablet {
+            margin-left: .5rem;
+            margin-top: .25rem;
+        }
+    }
+
+    &__image {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin-top: 1rem;
+        background-color: $silver;
+
+        @include tablet{
+            margin-top: 0;
+            justify-self: flex-end;
+        }
+
+    }
+
+    &__image-container {
+        height: 100%;
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            height: initial;
+        }
+    }
+
+    &__name {
+        margin-top: 1.5rem;
+        @include H4-MOB;
+        color: $black;
+        font-weight: $demi-bold;
+        display: inline-block;
+
+        @include tablet {
+            @include H3-DT;
+            margin-top: 0;
+        }
+    }
+
+    &__name-date-cont {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            justify-content: initial;
+        }
+
+        @include desktop{
+            width: 100%;
+        }
+    }
+}
