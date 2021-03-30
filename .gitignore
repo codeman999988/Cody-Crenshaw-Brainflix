@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/client/node_modules/*git st
 
 
 # testing
@@ -20,6 +21,8 @@
 .env.production.local
 package-lock.json
 .package-lock.json
+
+/client/node_modules*
 
 
 npm-debug.log*
