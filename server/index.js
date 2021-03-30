@@ -3,9 +3,11 @@ const app = express();
 const SERVER_PORT = 8080;
 const videoRoutes = require('./routes/videos.js');
 const cors = require('cors');
+const commentRoutes = require('./routes/comments.js')
 
 app.use(cors())
 app.use('/videos', videoRoutes);
+app.use('/videoDetails/comments', commentRoutes)
 
 
 app.listen(SERVER_PORT, () => {
