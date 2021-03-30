@@ -16,7 +16,7 @@ class App extends Component {
   
 componentDidMount() {
   axios
-  .get("https://project-2-api.herokuapp.com/videos?api_key=5ded7161-325c-4ff1-9693-25657ee3c456")
+  .get("http://localhost:8080/videos")
   .then(result => {
     this.setState({
       currentVideo: window.location.pathname.slice(7),
