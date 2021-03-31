@@ -4,6 +4,9 @@ const router = require('express').Router();
 const videoDetails = require('../data/video-details.json');
 const fs = require('fs');
 
+
+
+
 // router.get('/', (req, res)=> {
 //     fs.readFile('/Users/codycrenshaw/Desktop/Projects/Cody-Crenshaw-Brainflix/sprint-three/server/data/comments.json', (err, data) => {
 //         if (err) {
@@ -24,21 +27,43 @@ router.get('/:id', (req, res) => {
             return;
         }
         data = JSON.parse(data);
-        const answer = data.find(eL => eL.id == req.params.id)
-        console.log(data);
+        const answer = data.find(eL => eL.id == req.params.id);
         res.send(answer);
-    })
-})
+    }) 
+}) 
 
 router.post('/:id', (req, res) => {
-    fs.readFile('/Users/codycrenshaw/Desktop/Projects/Cody-Crenshaw-Brainflix/sprint-three/server/data/video-details.json', (err, data) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
+    fs.readFile('/Users/codycrenshaw/Desktop/Projects/Cody-Crenshaw-Brainflix/sprint-three/server/data/video-details.json', (err, data) => {    if (err){
+        console.error(err);
+        return; 
+    }
         data = JSON.parse(data);
-        console.log(req);
-})
+        console.log(data);
+        const videoId = data.find(eL => eL.id == req.params.id);
+        // console.log('data',data);
+        console.log('req',req.body); 
+        console.log(videoId.comments);
+
+
+        videoId.comments.push(req.body);
+
+       console.log(videoId);
+        fs.writeFile(`/Users/codycrenshaw/Desktop/Projects/Cody-Crenshaw-Brainflix/sprint-three/server/data/video-details.json`, JSON.stringify(data), (err,data) => {
+            res.json(data)
+        })
+
+
+        
+        
+        
+        // if (err) {
+        //     console.error(err);
+        //     return;
+        // }
+        // data = JSON.parse(data);
+        // console.log(req.params)
+
+})})
     
     
     

@@ -21,7 +21,13 @@ body {
 
   @include desktop{
     display: flex;
-    padding: 0;
+    padding: 0 11.25rem;
     justify-content: space-between;
+  }
+}
+
+.left-side {
+  @include desktop {
+    margin-right: 1.5rem;
   }
 }

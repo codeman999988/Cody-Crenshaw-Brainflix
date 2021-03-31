@@ -9,7 +9,7 @@ class CommentSection extends Component {
     constructor(props) {
         super(props);
     
-    this.state={commentsArray: []}
+    this.state={commentsArray: null}
     this.postComment=this.postComment.bind(this);
 }
 
@@ -17,10 +17,10 @@ class CommentSection extends Component {
 postComment = (e) => {
     e.preventDefault();
     axios
-    .post(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}/comments?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`, 
-        {  
-          "name": `${e.target.name.value}`,
-          "comment": `${e.target.commentField.value}`
+    .post(`http://localhost:8080/videoDetails/comments/${this.props.currentVideo}`, 
+      {  
+          name: `${e.target.name.value}`,
+          comment: `${e.target.commentField.value}`
         })
     .then(response => {
           this.setState({lastCommentPosted: e.target.name.value});
@@ -33,9 +33,9 @@ postComment = (e) => {
 
 componentDidMount() {
     axios
-        .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
+        .get(`http://localhost:8080/videoDetails/comments/${this.props?.currentVideo}`)
         .then(result => {
-        this.setState({commentsArray: result.data.comments.sort(function(a,b) {
+        this.setState({commentsArray: result.data.comments?.sort(function(a,b) {
             return a.timestamp - b.timestamp;
         })})
     })
@@ -45,20 +45,23 @@ componentDidUpdate(prevProps, prevState) {
     if(this.props.currentVideo !== prevProps.currentVideo
     || this.state.commentsArray === prevState.commentsArray) {
     axios
-        .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
+        .get(`http://localhost:8080/videoDetails/comments/${this.props.currentVideo}`)
         .then(result => {
-            this.setState({commentsArray: result.data.comments.sort(function(a,b) {
+            this.setState({commentsArray: result.data.comments?.sort(function(a,b) {
             return a.timestamp - b.timestamp;
         })});
     })}
 }
 
 render() {
+    console.log(this.props);
+    console.log(this.state);
     return (
         <section className="comments__container">
             <CommentForm 
+            commentsArray={this.state.commentsArray?.length}
             postComment={(e)=>{this.postComment(e)}} />
-            {this.state.commentsArray.reverse().map((comm) =>{ return (
+            {this.state.commentsArray?.reverse().map((comm) =>{ return (
             <Comment
             name={comm.name}
             date={Moment(comm.timestamp).fromNow()}

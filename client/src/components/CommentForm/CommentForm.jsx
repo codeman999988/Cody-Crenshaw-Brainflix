@@ -3,8 +3,11 @@ import './CommentForm.scss';
 
 const CommentForm = (props) => {
 
+  console.log(props)
 return (
+
   <section className="comments">
+    <h2>{props.commentsArray} comments</h2>
     <h2 className="comments__invite">
       JOIN THE CONVERSATION
     </h2>
