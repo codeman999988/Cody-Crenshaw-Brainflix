@@ -19,15 +19,19 @@ componentDidMount() {
   .get("http://localhost:8080/videos")
   .then(result => {
     this.setState({
-      currentVideo: window.location.pathname.slice(7),
+      currentVideo: window.location.pathname.slice(7) || "1af0jruup5gu",
       videoArray: result.data});
+  }
+  )
+  .catch ((error)=>{
+    console.log(error)
   })
 }
 
 componentDidUpdate(_, prevState) {
   if(this.state.currentVideo !== prevState.currentVideo){
     this.setState({
-      currentVideo: window.location.pathname.slice(7)
+      currentVideo: window.location.pathname.slice(8)
     })
   }
 }
@@ -41,11 +45,11 @@ render () {
         <Switch>
           <Route 
           exact path='/' 
-          render={(routeProps) => <VideoPage currentVideo={"1af0jruup5gu"} videoArray={videoArray} {...routeProps}  />} />
+          render={(routeProps) => <VideoPage currentVideo={this.state?.currentVideo} videoArray={videoArray} {...routeProps}  />} />
           <Route 
-          path='/video/:id' 
-          render={(routeProps) => videoArray && <VideoPage currentVideo={currentVideo} 
-          videoArray={videoArray} {...routeProps}  />} />
+          path='/videos/:id' 
+          render={(routeProps) => videoArray && <VideoPage currentVideo={this.state?.currentVideo} 
+          videoArray={this.state?.videoArray} {...routeProps}  />} />
           <Route 
           path='/upload' 
           render={(routeProps) => <UploadPage {...routeProps} />} />

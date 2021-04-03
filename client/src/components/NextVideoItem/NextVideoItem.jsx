@@ -10,7 +10,7 @@ return (
     <div 
     className='videoItem__container' 
     key={props.id}>
-        <Link to={`/video/${id}`} >
+        <Link to={`/videos/${id}`} >
             <img  
             className="videoItem__image" 
             alt={alt} 

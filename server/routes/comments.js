@@ -3,6 +3,7 @@ const router = require('express').Router();
 // const comments = require('../data/videoDetails.json');
 const videoDetails = require('../data/video-details.json');
 const fs = require('fs');
+const path = require ('path');
 
 
 
@@ -27,13 +28,14 @@ router.get('/:id', (req, res) => {
             return;
         }
         data = JSON.parse(data);
+        console.log(data);
         const answer = data.find(eL => eL.id == req.params.id);
         res.send(answer);
     }) 
 }) 
 
 router.post('/:id', (req, res) => {
-    fs.readFile('/Users/codycrenshaw/Desktop/Projects/Cody-Crenshaw-Brainflix/sprint-three/server/data/video-details.json', (err, data) => {    if (err){
+    fs.readFile(path.resolve('../../sprint-three/server/data/video-details.json'), (err, data) => {    if (err){
         console.error(err);
         return; 
     }

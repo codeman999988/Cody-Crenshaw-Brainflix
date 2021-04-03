@@ -2,7 +2,7 @@ import React from 'react';
 import './HeroVideo.scss';
 
 const HeroVideo = (props) => {
-
+console.log(props);
 return (
     <div className="hero__video-container">
         <video 

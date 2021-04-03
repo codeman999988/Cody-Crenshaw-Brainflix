@@ -17,7 +17,7 @@ class Article extends Component {
 
     componentDidMount(){
         axios
-        .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
+        .get(`http://localhost:8080/videos/${this.props.currentVideo}`)
         .then(result =>{
             this.setState({
                 articleTitle: result.data.title, 
@@ -31,9 +31,9 @@ class Article extends Component {
     }
 
     componentDidUpdate(prevProps){
-        if(this.props.currentVideo !== prevProps.currentVideo)
+        if(this.props.currentVideo !== prevProps.currentVideo){
         axios
-        .get(`https://project-2-api.herokuapp.com/videos/${this.props.currentVideo || '1af0jruup5gu'}?api_key=5ded7161-325c-4ff1-9693-25657ee3c456`)
+        .get(`http://localhost:8080/videos/${this.props.currentVideo || '1af0jruup5gu'}`)
         .then(result =>{
 
             this.setState({
@@ -45,7 +45,7 @@ class Article extends Component {
                 articleDesc: result.data.description
             })
         })
-    }
+    }}
 
 render() {
     

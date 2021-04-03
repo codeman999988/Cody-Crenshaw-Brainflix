@@ -8,37 +8,54 @@ import axios from 'axios';
 
 class VideoPage extends Component {
     
-    state={currentVideo: "1af0jruup5gu",
+    state={currentVideo: this.props.currentVideo || "1af0jruup5gu",
             videoArray: null,
     }
 
 componentDidMount() {
-    if(this.props.match.params.id){
+    if(true){
     axios
-    .get("https://project-2-api.herokuapp.com/videos?api_key=5ded7161-325c-4ff1-9693-25657ee3c456")
+    .get("http://localhost:8080/videos")
     .then(result => {
+        console.log(this.props)
         this.setState({
-            currentVideo: this.props.match.params.id, 
+            currentVideo: this.props?.match.params.id || "1af0jruup5gu", 
             videoArray: result.data 
         });
+        console.log(this.state);
+        console.log(result);
     }).catch(err =>{
         console.warn(err);
     })
     }
 }
 
-componentDidUpdate (prevProps) {
-if(prevProps.match.params.id !== this.props.match.params.id) {
-    this.setState({
-        currentVideo: this.props.match.params.id ?? "1af0jruup5gu"
+componentDidUpdate (prevProps, prevState) {
+if(prevProps.match.params.id !== this.props.match.params.id ) {
+    axios
+    .get("http://localhost:8080/videos")
+    .then(result => {
+        console.log(this.props.match.params);
+        this.setState({
+            currentVideo: this.props.match.params.id || "1af0jruup5gu", 
+
+            videoArray: result.data 
+        });
+        console.log(this.state);
+        console.log(result);
+    }).catch(err =>{
+        console.warn(err);
     })
-}}
+
+    }
+}
 
 render() {
+console.log(this.props)
     return (
 <>
     <HeroVideo 
-    currentVideo={this.state.currentVideo} 
+    currentVideo={this.state?.currentVideo} 
     videoArray={this.props.videoArray}  />
     <div className="desktop-container">
         <div className="left-side">
@@ -51,7 +68,7 @@ render() {
         </div>
         <NextVideoList 
         currentVideo={this.state.currentVideo} 
-        videoArray={this.props.videoArray?.filter(el => el.id !== this.state.currentVideo)} />
+        videoArray={this.state.videoArray?.filter(el => el.id !== this.state.currentVideo)} />
     </div>
 </>
 )}
