@@ -9,7 +9,7 @@ import VideoPage from './Pages/VideoPage';
 class App extends Component {
   
   state={
-    CurrentVideo: '',
+    CurrentVideo: '1af0jruup5gu',
     VideoArray: null,
   }
 
@@ -19,7 +19,7 @@ componentDidMount() {
   .get("http://localhost:8080/videos")
   .then(result => {
     this.setState({
-      currentVideo: window.location.pathname.slice(7) || "1af0jruup5gu",
+      currentVideo: window.location.pathname.slice(8) || "1af0jruup5gu",
       videoArray: result.data});
   }
   )

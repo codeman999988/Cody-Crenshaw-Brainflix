@@ -22,6 +22,10 @@
         padding-top: 1rem;
     }
 
+    &__btn-cont {
+        justify-self: flex-end;
+        display: inline-block;
+    }
     &__container {
         @include flexCol;
         width: 100%;
@@ -51,10 +55,33 @@
         display: inline-block;
         @include H4-MOB;
         color: $silver;
+        margin-left: .5rem;
 
         @include tablet {
             margin-left: .5rem;
             margin-top: .25rem;
+            align-self: flex-start;
+        }
+    }
+
+    &__dlt-btn {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-top: 1rem;
+        font-weight: bold;
+        border-radius: 50%;
+        color: $black;
+        text-align: center;
+        background-color: $merc;
+        box-sizing: border-box;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            background-color: $silver;
         }
     }
 
@@ -67,7 +94,7 @@
 
         @include tablet{
             margin-top: 0;
-            justify-self: flex-end;
+            justify-self: right;
         }
 
     }
@@ -101,7 +128,7 @@
         margin-bottom: 1rem;
 
         @include tablet {
-            justify-content: initial;
+            justify-content: space-between;
         }
 
         @include desktop{

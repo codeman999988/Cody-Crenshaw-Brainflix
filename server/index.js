@@ -26,7 +26,7 @@ app.use(cors())
 
 // });
 app.use('/videos', videoRoutes);
-app.use('/videoDetails/comments', commentRoutes)
+app.use('/video-details', commentRoutes)
 
 
 app.listen(SERVER_PORT, () => {

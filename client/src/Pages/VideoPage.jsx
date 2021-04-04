@@ -9,7 +9,7 @@ import axios from 'axios';
 class VideoPage extends Component {
     
     state={currentVideo: this.props.currentVideo || "1af0jruup5gu",
-            videoArray: null,
+            videoArray: this.props.videoArray,
     }
 
 componentDidMount() {

@@ -71,6 +71,7 @@
         @include flexCol;
 
         @include desktop {
+            flex-direction: row;
             width: 100%;
         }
     }
@@ -80,6 +81,14 @@
 
         @include desktop {
             padding-top: 2.5rem;  
+            width: 100%;
+        }
+    }
+
+    &__form-container2{
+        @include flexCol;
+
+        @include desktop {
             width: 100%;
         }
     }
