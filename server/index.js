@@ -11,6 +11,8 @@ const fs = require('fs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())                    
 app.use(cors())
+app.use(express.static('/server/public'))
+
 
 // app.get('/videos', (req, res)=> {
 //     fs.readFile('/Users/codycrenshaw/Desktop/Projects/Cody-Crenshaw-Brainflix/sprint-three/server/data/video-details.json', (err, data) => {

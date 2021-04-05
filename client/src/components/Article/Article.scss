@@ -1,6 +1,6 @@
-@import '../../partials/_variables';
-@import '../../partials/_mixins';
-@use '../../partials/fonts' as *;
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
 
 * {
     margin-block-start: 0;

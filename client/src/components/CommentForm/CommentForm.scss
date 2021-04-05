@@ -1,5 +1,5 @@
-@import '../../partials/_variables';
-@import '../../partials/_mixins';
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
 
 .comments {
     @include flexCol;
@@ -158,8 +158,13 @@
         }
 
     &__title {
-        @include H2-MOB;
+        @include H1-MOB;
         margin-bottom: 2rem;
+        color: $black;
+
+        @include tablet{
+            @include H2-DT
+        }
     }
 }
 

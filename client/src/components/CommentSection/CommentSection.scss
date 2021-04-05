@@ -1,5 +1,6 @@
-@import '../../partials/_variables';
-@import '../../partials/_mixins';
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+// @use "../../partials/fonts" as *;
 
 .comments__container {
     @include desktop {

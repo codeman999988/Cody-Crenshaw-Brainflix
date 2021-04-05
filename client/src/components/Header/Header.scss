@@ -1,6 +1,5 @@
-@import '../../partials/variables';
-@import '../../partials/mixins';
-
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
 
 .header {
     @include flexCol;

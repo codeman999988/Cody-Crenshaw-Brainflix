@@ -3,19 +3,20 @@ import './CommentForm.scss';
 
 const CommentForm = (props) => {
 
-  console.log(props)
+
 return (
 
   <section className="comments">
-    <h2>{props.commentsArray} comments</h2>
+    <h2 className="comments__title">{props.commentsArray} comments</h2>
     <h2 className="comments__invite">
       JOIN THE CONVERSATION
     </h2>
     <form 
-    onSubmit={(e) => props.postComment(e)} 
-    className="comments__form" >
+      onSubmit={(e) => props.postComment(e)} 
+      className="comments__form" >
       <div className="comments__form-image-container" >
-        <div className="comment__image comments__profile-pic profile-pic" id="profile-pic">
+        <div 
+        className="comment__image comments__profile-pic profile-pic" id="profile-pic">
         </div>
       </div>
       <div className="comments__form-container">
@@ -30,8 +31,9 @@ return (
             name="commentField" 
             placeholder="Add a new comment" />
         </div>
-
-        <button className="comments__button" type="submit">COMMENT
+        <button 
+          className="comments__button" 
+          type="submit"> COMMENT
         </button>
       </div>
     </form>

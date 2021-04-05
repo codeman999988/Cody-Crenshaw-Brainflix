@@ -23,7 +23,8 @@ postComment = (e) => {
       {  
           name: `${e.target.name.value}`,
           comment: `${e.target.commentField.value}`,
-          id: `${newid}`
+          id: `${newid}`,
+          timestamp: Date.getTime()
         })
     .then(response => {
           this.setState({lastCommentPosted: e.target.name.value});
@@ -53,7 +54,9 @@ componentDidMount() {
     axios
         .get(`http://localhost:8080/video-details/${this.props?.currentVideo}/comments`)
         .then(result => {
-        this.setState({commentsArray: result.data.comments?.sort(function(a,b) {
+           const APIcomments = result.data.comments;
+           console.log(APIcomments);
+        this.setState({commentsArray: APIcomments?.sort(function(a,b) {
             return a.timestamp - b.timestamp;
         })})
     })
@@ -65,7 +68,9 @@ componentDidUpdate(prevProps, prevState) {
     axios
         .get(`http://localhost:8080/video-details/${this.props.currentVideo}/comments`)
         .then(result => {
-            this.setState({commentsArray: result.data.comments?.sort(function(a,b) {
+            const APIcomments = result.data.comments;
+            console.log(result);
+            this.setState({commentsArray: APIcomments?.sort(function(a,b) {
             return a.timestamp - b.timestamp;
         })});
     })}

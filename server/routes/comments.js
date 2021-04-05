@@ -27,7 +27,7 @@ function remove(array, element) {
 // });
 
 router.get('/:id/comments', (req, res) => {
-    fs.readFile(path.resolve('../../sprint-three/server/data/video-details.json'), (err, data) => {
+    fs.readFile(path.resolve('../../sprint-three/server/data/video-details.json'),(err, data) => {
         if (err) {
             console.error(err);
             return;
@@ -35,7 +35,7 @@ router.get('/:id/comments', (req, res) => {
         data = JSON.parse(data);
 
         const answer = data.find(eL => eL.id == req.params.id);
-        res.send(answer);
+        res.send(answer)
     }) 
 }) 
 
@@ -73,7 +73,7 @@ router.post('/:id/comments', (req, res) => {
 
 })})
 router.delete("/:videoId/comments/:commentId", (req, res)=>{
-    console.log(req.params);
+    console.log(req.params.commentId);
     fs.readFile(path.resolve('../../sprint-three/server/data/video-details.json'), (err, data) => {    if (err){
         console.error(err);
         return; 

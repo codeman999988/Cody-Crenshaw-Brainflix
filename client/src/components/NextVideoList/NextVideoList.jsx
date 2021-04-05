@@ -19,4 +19,5 @@ return (
         );})}
     </section>
 )}
-    export default NextVideoList;
+
+export default NextVideoList;

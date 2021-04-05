@@ -1,8 +1,7 @@
-@import '../../partials/_variables';
-@import '../../partials/_mixins';
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
 
 .videoItem {
-
     &__author {
         @include H2-MOB;
         font-weight: $fontreg;

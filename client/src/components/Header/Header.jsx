@@ -15,15 +15,15 @@ return (
         <div className="header__desktop-right-container">
             <div className="header__search-container">
                 <img 
-                className="header__search-icon" 
-                src={magGlass} 
-                alt="" />
+                    className="header__search-icon" 
+                    src={magGlass} 
+                    alt="" />
                 <input 
-                type="search" 
-                className="header__searchBar" 
-                placeholder={"Search..." } 
-                alt="Search" 
-                result="0"/>
+                    type="search" 
+                    className="header__searchBar" 
+                    placeholder={"Search..." } 
+                    alt="Search" 
+                    result="0"/>
             </div>
             <div className="header__btn-container">
                 <Link to="/upload">

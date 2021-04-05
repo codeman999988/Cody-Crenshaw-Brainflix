@@ -10,7 +10,7 @@ class App extends Component {
   
   state={
     CurrentVideo: '1af0jruup5gu',
-    VideoArray: null,
+    videoArray: null,
   }
 
   
@@ -18,6 +18,7 @@ componentDidMount() {
   axios
   .get("http://localhost:8080/videos")
   .then(result => {
+    console.log(result);
     this.setState({
       currentVideo: window.location.pathname.slice(8) || "1af0jruup5gu",
       videoArray: result.data});
@@ -37,7 +38,6 @@ componentDidUpdate(_, prevState) {
 }
 
 render () {
-  const {videoArray, currentVideo} = this.state;
   return (
     <div className="App">
       <Router>
@@ -45,10 +45,10 @@ render () {
         <Switch>
           <Route 
           exact path='/' 
-          render={(routeProps) => <VideoPage currentVideo={this.state?.currentVideo} videoArray={videoArray} {...routeProps}  />} />
+          render={(routeProps) => <VideoPage currentVideo={this.state.currentVideo} videoArray={this.state.videoArray} {...routeProps}  />} />
           <Route 
           path='/videos/:id' 
-          render={(routeProps) => videoArray && <VideoPage currentVideo={this.state?.currentVideo} 
+          render={(routeProps) => this.state.videoArray && <VideoPage currentVideo={this.state?.currentVideo} 
           videoArray={this.state?.videoArray} {...routeProps}  />} />
           <Route 
           path='/upload' 

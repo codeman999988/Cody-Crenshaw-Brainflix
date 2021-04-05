@@ -19,6 +19,7 @@ class Article extends Component {
         axios
         .get(`http://localhost:8080/videos/${this.props.currentVideo}`)
         .then(result =>{
+
             this.setState({
                 articleTitle: result.data.title, 
                 articleChannel: result.data.channel, 
@@ -50,7 +51,6 @@ class Article extends Component {
 render() {
     
     const {articleTitle, articleTimestamp, articleViews, articleLikes, articleDesc, articleChannel} = this.state;
-    
     return (
         <div className="article__container">
             <h1 className="article__title">

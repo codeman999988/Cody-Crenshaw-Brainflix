@@ -1,6 +1,6 @@
-@import  './partials/variables';
-@import "./partials/mixins";
-@use "./partials/_fonts" as *;
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+// @use "./partials/fonts" as *;
 
 
 *{
