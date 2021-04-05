@@ -24,7 +24,7 @@ postComment = (e) => {
           name: `${e.target.name.value}`,
           comment: `${e.target.commentField.value}`,
           id: `${newid}`,
-          timestamp: Date.getTime()
+          timestamp: Date().getTime
         })
     .then(response => {
           this.setState({lastCommentPosted: e.target.name.value});
@@ -35,18 +35,16 @@ postComment = (e) => {
         })
       }
 
-      tryDeleteComment(e) {
-
-        axios
-        .delete(`http://localhost:8080/video-details/${this.props.currentVideo}/comments/${e.target.id}`)
-        .then(result =>{ 
-            this.setState({commentDeleted: true});
-            console.log(result)
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-    }
+deleteComment(e) {
+axios
+    .delete(`http://localhost:8080/video-details/${this.props.currentVideo}/comments/${e.target.id}`)
+    .then(result =>{ 
+        this.setState({commentDeleted: true});
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+}
 
 
 
@@ -55,7 +53,6 @@ componentDidMount() {
         .get(`http://localhost:8080/video-details/${this.props?.currentVideo}/comments`)
         .then(result => {
            const APIcomments = result.data.comments;
-           console.log(APIcomments);
         this.setState({commentsArray: APIcomments?.sort(function(a,b) {
             return a.timestamp - b.timestamp;
         })})
@@ -69,7 +66,6 @@ componentDidUpdate(prevProps, prevState) {
         .get(`http://localhost:8080/video-details/${this.props.currentVideo}/comments`)
         .then(result => {
             const APIcomments = result.data.comments;
-            console.log(result);
             this.setState({commentsArray: APIcomments?.sort(function(a,b) {
             return a.timestamp - b.timestamp;
         })});
@@ -77,15 +73,13 @@ componentDidUpdate(prevProps, prevState) {
 }
 
 render() {
-    console.log(this.props);
-    console.log(this.state);
     return (
-        <section className="comments__container">
-            <CommentForm 
+    <section className="comments__container">
+        <CommentForm 
             commentsArray={this.state.commentsArray?.length}
             postComment={(e)=>{this.postComment(e)}} />
-            {this.state.commentsArray?.reverse().map((comm, i) =>{ return (
-            <Comment
+    {this.state.commentsArray?.reverse().map((comm, i) =>{ return (
+        <Comment
             commentsArray={this.state.commentsArray}
             name={comm.name}
             date={Moment(comm.timestamp).fromNow()}
@@ -94,11 +88,11 @@ render() {
             currentVideo={this.props.currentVideo}
             id={comm.id}
             deleteComment={(props)=>{
-                this.tryDeleteComment(props)
-            }}
-            />
-            )})}
-        </section>
+                this.deleteComment(props)
+        }}
+        />
+        )})}
+    </section>
 );}
 }
 

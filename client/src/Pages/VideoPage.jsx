@@ -17,14 +17,11 @@ componentDidMount() {
     axios
     .get("http://localhost:8080/videos")
     .then(result => {
-        console.log(this.props)
         this.setState({
             currentVideo: this.props?.match.params.id || "1af0jruup5gu", 
             videoArray: result.data 
-        });
-        console.log(this.state);
-        console.log(result);
-    }).catch(err =>{
+        });})
+    .catch(err =>{
         console.warn(err);
     })
     }
@@ -45,7 +42,6 @@ if(prevProps.match.params.id !== this.props.match.params.id ) {
     })}}
 
 render() {
-console.log(this.props)
     return (
 <>
     <HeroVideo 

@@ -14,19 +14,6 @@ app.use(cors())
 app.use(express.static('/server/public'))
 
 
-// app.get('/videos', (req, res)=> {
-//     fs.readFile('/Users/codycrenshaw/Desktop/Projects/Cody-Crenshaw-Brainflix/sprint-three/server/data/video-details.json', (err, data) => {
-//         if (err) {
-//             console.error(err);
-//             return;
-//         }
-//         data = JSON.parse(data);
-//         // console.log(data);
-//         res.json(data);
-//     })
-//     // res.send("test")
-
-// });
 app.use('/videos', videoRoutes);
 app.use('/video-details', commentRoutes)
 

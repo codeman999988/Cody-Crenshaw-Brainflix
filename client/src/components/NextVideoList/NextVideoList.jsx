@@ -3,7 +3,6 @@ import NextVideoItem from '../NextVideoItem/NextVideoItem';
 import './NextVideoList.scss';
 
 const NextVideoList = (props) => {
-    console.log(props);
 
 return (
     <section className="nextVideoList__container">

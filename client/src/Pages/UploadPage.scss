@@ -186,9 +186,25 @@
         }
 
         @include desktop {
-            width: 23.8888888888vw;
-            height: 12.7083333333vw;
+            width: 15.25rem;
+            height: 8rem;
         }
 
     }
+    &__video-upload {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 2rem;
+
+        @include tablet {
+            width: 44.791666666vw;
+        }
+
+        @include desktop {
+            width: 23.8888888888vw;
+        }
+
+    }
+  
+  
 }

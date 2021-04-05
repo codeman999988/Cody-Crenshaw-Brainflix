@@ -19,7 +19,11 @@ uploadVideo(e) {
         {  
           title: `${e.target.title.value}`,
           description: `${e.target.description.value}`,
-          image: "http::/localhost:3000/client/public"
+          image: "http::/localhost:3000/client/public",
+          comments: [],
+          likes: 0,
+          views: 0
+
         })
     .then(response => {
         return
@@ -48,11 +52,11 @@ render() {
             <input 
                 onChange={this.handleChange}
                 type="file"
-                className="upload__video-thumbnail" 
+                className="u upload__video-upload" 
                 alt="handlebars"
                 name="inputFile" 
                 />
-            <img src='../../public/Upload-video-preview.jpg' />
+            <img className="upload__video-thumbnail" src="http://localhost:3000/Upload-video-preview.jpg" />
         </div>
             <div className="upload__form-container">
                 <div className="upload__form-container2">

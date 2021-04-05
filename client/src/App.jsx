@@ -18,7 +18,6 @@ componentDidMount() {
   axios
   .get("http://localhost:8080/videos")
   .then(result => {
-    console.log(result);
     this.setState({
       currentVideo: window.location.pathname.slice(8) || "1af0jruup5gu",
       videoArray: result.data});
@@ -44,15 +43,15 @@ render () {
         <Header />
         <Switch>
           <Route 
-          exact path='/' 
-          render={(routeProps) => <VideoPage currentVideo={this.state.currentVideo} videoArray={this.state.videoArray} {...routeProps}  />} />
+            exact path='/' 
+            render={(routeProps) => <VideoPage currentVideo={this.state.currentVideo} videoArray={this.state.videoArray} {...routeProps}  />} />
           <Route 
-          path='/videos/:id' 
-          render={(routeProps) => this.state.videoArray && <VideoPage currentVideo={this.state?.currentVideo} 
-          videoArray={this.state?.videoArray} {...routeProps}  />} />
+            path='/videos/:id' 
+            render={(routeProps) => this.state.videoArray && <VideoPage currentVideo={this.state?.currentVideo} 
+            videoArray={this.state?.videoArray} {...routeProps}  />} />
           <Route 
-          path='/upload' 
-          render={(routeProps) => <UploadPage {...routeProps} />} />
+            path='/upload' 
+            render={(routeProps) => <UploadPage {...routeProps} />} />
         </Switch>
       </Router>
     </div>
