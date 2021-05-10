@@ -1,5 +1,7 @@
 This project is Brainflix.  It is being built using react.
 
+It was a project done for BrainStation's web development bootcamp.  Mockups and functionality requirements were provided by BrainStation.
+
 It is a mock-website that represents a video site that has different videos that a user can watch.  The site also will allow users to upload their own videos.  This site is at it's final version, it has been built in three distinct sprints..  
 
 It has limited functionality as it can not currently play videos or perform searches.
